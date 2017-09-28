@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<body>
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
             <div class="top-right links">
@@ -24,6 +23,18 @@
                 <a href="https://forge.laravel.com">Forge</a>
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
+
+            {{--@foreach()--}}
+            <div class="col-md-4">
+                xxxxx
+            </div>
+            <div class="col-md-4">
+                xxxxx
+            </div>
+            <div class="col-md-4">
+                xxxxx
+            </div>
+            {{--@endforeach--}}
         </div>
+
     </div>
-</body>

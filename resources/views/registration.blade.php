@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @include("common.messages")
     <div class="col-sm-6 text-center ">
-        {!! Form::open(array('url' => '/competition/registration/new'), "Wedstrijd registratie") !!}
+        {!! Form::open(array('url' => '/competition/registration'), "Wedstrijd registratie") !!}
             <div class="form-group">
                 {{ Form::label('Voornaam'), 'firstname' }}
                 {{ Form::text('firstname'), array('class' => 'form-control')  }}

@@ -13,7 +13,7 @@ class CreateBlockTable extends Migration
      */
     public function up()
     {
-        Schema::create('block', function (Blueprint $table) {
+        Schema::create('blocks', function (Blueprint $table) {
             $table->increments('id');
             $table->text('explanation'); //uitleg
             $table->string('prize'); // prijs
@@ -30,6 +30,6 @@ class CreateBlockTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block');
+        Schema::dropIfExists('blocks');
     }
 }

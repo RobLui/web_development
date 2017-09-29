@@ -13,7 +13,7 @@ class CreateRegistrationTable extends Migration
      */
     public function up()
     {
-        Schema::create('registration', function (Blueprint $table) {
+        Schema::create('registrations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
@@ -35,6 +35,6 @@ class CreateRegistrationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registration');
+        Schema::dropIfExists('registrations');
     }
 }

@@ -22,7 +22,7 @@ class RegistrationController extends Controller
             'lastname'      => 'required|max:255',
             'age'           => 'required|max:255',
             'adress'        => 'required|max:255',
-            'housenumber'   => 'required|max:255',
+            'housenumber'   => 'requi   red|max:255',
             'municipality'  => 'required|max:255',
             'postalcode'    => 'required|max:255',
             'email'         => 'required|max:255',
@@ -42,11 +42,13 @@ class RegistrationController extends Controller
             $registration->email = $req->email;
             $registration->ipadress = $req->ip();
             $registration->save();
+            Session::flash("success", ("Saved!"));
             return view('registration');
         }
-        else{
+        else
+        {
             Session::flash("error", ("Something went wrong!"));
-            return view('registration');
+            return redirect('competition/registration');
         }
     }
 

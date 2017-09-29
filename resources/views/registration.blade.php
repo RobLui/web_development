@@ -2,11 +2,12 @@
 
 @section('content')
     @include("common.messages")
-    <div class="col-sm-6 text-center ">
-        {!! Form::open(array('url' => '/competition/registration'), "Wedstrijd registratie") !!}
+    <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>Registration </h2>
+        {!! Form::open(array('url' => '/competition/registration','class' => 'form-horizontal')) !!}
             <div class="form-group">
                 {{ Form::label('Voornaam'), 'firstname' }}
-                {{ Form::text('firstname'), array('class' => 'form-control')  }}
+                {{ Form::text("firstname"),array('class' => 'form-control') }}
             </div>
             <div class="form-group">
                 {{ Form::label('Achternaam'), 'lastname' }}

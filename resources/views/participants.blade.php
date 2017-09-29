@@ -3,7 +3,7 @@
 
     @include("common.messages")
     @foreach($parts as $part )
-        <div class="col-md-3 col-md-push-2">
+        <div class="col-sm-4">
             <ul class="list-group">
                 <li class="list-group-item">Naam: {{ $part->firstname }} {{ $part->lastname }}</li>
                 <li class="list-group-item">Leeftijd: {{$part->age}}</li>

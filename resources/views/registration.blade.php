@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-sm-6 text-center ">
-        {!! Form::open(array('url' => 'registration/new'), "Wedstrijd registratie") !!}
+        {!! Form::open(array('url' => '/competition/registration/new'), "Wedstrijd registratie") !!}
             <div class="form-group">
                 {{ Form::label('Voornaam'), 'firstname' }}
                 {{ Form::text('firstname'), array('class' => 'form-control')  }}
@@ -17,8 +17,8 @@
             </div>
             <br> {{--TEMPORARY scheiding--}}
             <div class="form-group">
-                {{ Form::label('Straatnaam'), 'street' }}
-                {{ Form::text('street'), array('class' => 'form-control')  }}
+                {{ Form::label('Straatnaam'), 'adress' }}
+                {{ Form::text('adress'), array('class' => 'form-control')  }}
             </div>
             <div class="form-group">
                 {{ Form::label('Nummer'), 'housenumber' }}
@@ -27,6 +27,10 @@
             <div class="form-group">
                 {{ Form::label('Gemeente'), 'municipality' }}
                 {{ Form::text('municipality'), array('class' => 'form-control')  }}
+            </div>
+            <div class="form-group">
+                {{ Form::label('Postcode'), 'postalcode' }}
+                {{ Form::text('postalcode'), array('class' => 'form-control')  }}
             </div>
             <br> {{--TEMPORARY scheiding--}}
             <div class="form-group">

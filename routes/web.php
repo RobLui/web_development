@@ -6,12 +6,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// --------HOME--------
-// --------------------
-    Route::get('/home', 'HomeController@index')
-    ->name('home')
-    ;
-
 // --------COMPETITION--------
 // ---------------------------
     Route::get('competition', 'CompetitionController@index')

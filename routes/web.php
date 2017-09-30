@@ -71,6 +71,12 @@ Route::get('dashboard', 'DashboardController@index')
     ->name('participants')
     ;
 
+// --------CONFIG--------
+// ----------------------------
+Route::get('/config', 'ConfigController@index')
+    ->name('config')
+;
+
 
 
 

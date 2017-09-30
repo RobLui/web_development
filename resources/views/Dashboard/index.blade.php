@@ -21,7 +21,7 @@
                     <a href="{{ route('showP') }}">Prijzen</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('registration') }}">Instellingen</a>
+                    <a href="{{ route('config') }}">Instellingen</a>
                 </div>
             </div>
         </div>

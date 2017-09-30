@@ -5,16 +5,45 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-// Home
-Route::get('/home', 'HomeController@index')->name('home');
 
-// Competition
-Route::get('competition', 'CompetitionController@index')->name('competition');
-Route::get('competition/registration', 'RegistrationController@index')->name('registration');
-Route::post('competition/registration', 'RegistrationController@create')->name('newregistration');
+// --------HOME--------
+// --------------------
+Route::get('/home', 'HomeController@index')
+    ->name('home')
+    ;
 
-// Participants
-Route::get('competition/participants', 'ParticipantController@index')->name('participants');
+// --------COMPETITION--------
+// ---------------------------
+Route::get('competition', 'CompetitionController@index')
+    ->name('competition')
+    ;
+
+// --------QUESTIONS--------
+// -------------------------
+Route::get('competition/questions', 'QuestionController@index')
+    ->name('showQ')
+    ;
+Route::get('competition/questions/create', 'QuestionController@create')
+    ->name('createQ')
+    ;
+Route::get('competition/questions/edit/{id}', 'QuestionController@edit')
+    ->name('editQ')
+    ;
+
+// --------REGISTRATIONS--------
+// -----------------------------
+Route::get('competition/registration', 'RegistrationController@index')
+    ->name('registration')
+    ;
+Route::post('competition/registration', 'RegistrationController@create')
+    ->name('newregistration')
+    ;
+
+// --------PARTICIPANTS--------
+// ----------------------------
+Route::get('competition/participants', 'ParticipantController@index')
+    ->name('participants')
+    ;
 
 
 

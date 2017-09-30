@@ -3,8 +3,8 @@
 @section('content')
     @include("common.messages")
     <div class="col-md-4 col-md-offset-4 text-center">
-        <h2>Registration </h2>
-        {!! Form::open(array('url' => '/competition/registration','class' => 'form-horizontal')) !!}
+        <h2>Registratie</h2>
+        {!! Form::open(array('route' => 'newregistration','class' => 'form-horizontal')) !!}
             <div class="form-group">
                 {{ Form::label('Voornaam'), 'firstname' }}
                 {{ Form::text("firstname"),array('class' => 'form-control') }}
@@ -39,7 +39,7 @@
                 {{ Form::label('email'), 'email' }}
                 {{ Form::text('email'), array('class' => 'form-control')  }}
             </div>
-            {{ Form::submit('Join the Competition!', array('class' => 'btn btn-primary')) }}
+            {{ Form::submit('IK DOE MEE!', array('class' => 'btn btn-primary')) }}
 
         {!! Form::close() !!}
         </div>

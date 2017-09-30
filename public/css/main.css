@@ -65,13 +65,15 @@ html, body {
     height:100%;
     padding-top:25%;
     display:block;
+    color:white;
+    font-size:1.5em;
 }
 .dashboard:first-child{
-    background-color:blue;
+    background-color:dimgrey;
 }
 .dashboard:nth-child(2){
-    background-color:yellow;
+    background-color:darkgrey;
 }
 .dashboard:nth-child(3){
-    background-color:red;
+    background-color:grey;
 }

@@ -3,25 +3,27 @@
 @section('content')
 
     @include("common.messages")
-    <div class="col-md-4 col-md-offset-4 text-center">
-        <h2>Guide</h2>
-        {!! Form::open(array('route' => 'competitioncreate','class' => 'form-horizontal')) !!}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>Wedstrijd pagina</h2>
+            {!! Form::open(array('route' => 'competitioncreate','class' => 'form-horizontal')) !!}
 
-            <div class="form-group">
-                {{ Form::label('Uitleg'), 'explanation' }}
-                {{ Form::text("explanation"),array('class' => 'form-control') }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('Prijzen'), 'prizes' }}
-                {{ Form::text("prizes"),array('class' => 'form-control') }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('Vorige deelnemers'), 'previous_participants' }}
-                {{ Form::text("previous_participants"),array('class' => 'form-control') }}
-            </div>
-            {{ Form::submit('IK DOE MEE!', array('class' => 'btn btn-primary')) }}
-
-        {!! Form::close() !!}
+                    <div class="col-md-4">
+                        {{ Form::label('explanation'),array('class' =>  'form-control' )}}
+                        {{ Form::textarea("explanation"),array('class' => 'form-control') }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ Form::label('prizes'),array('class' => 'form-group') }}
+                        {{ Form::textarea("prizes"),array('class' => 'form-control') }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ Form::label('previous_participants'),array('class' => 'form-group') }}
+                        {{ Form::textarea("previous_participants"),array('class' => 'form-control') }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ Form::submit('Toevoegen', array('class' => 'btn btn-secondary')) }}
+                    </div>
+            {!! Form::close() !!}
+        </div>
     </div>
-
 @endsection

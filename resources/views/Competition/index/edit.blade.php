@@ -3,22 +3,24 @@
 @section('content')
 
     @include("common.messages")
-    <div class="col-md-4 col-md-offset-4 text-center">
-        <h2>Guide</h2>
+    <div class="col-md-4 col-md-offset-4">
+        <h2 class="text-center" >Guide</h2>
         {!! Form::open(array('route' => 'competitionedit','class' => 'form-horizontal')) !!}
             <div class="form-group">
                 {{ Form::label('Uitleg'), "explanation" }}
-                <input type="text" name="explanation" id="explanation" value="{{$competition->explanation}}">
+                <input type="text" class="form-control" name="explanation" id="explanation" value="{{$competition->explanation}}">
             </div>
             <div class="form-group">
                 {{ Form::label('Prijzen'), "prizes" }}
-                <input type="text" name="prizes" id="prizes" value="{{$competition->prizes}}">
+                <input type="text" class="form-control" name="prizes" id="prizes" value="{{$competition->prizes}}">
             </div>
             <div class="form-group">
                 {{ Form::label('Vorige deelnemers'), "previous_participants" }}
-                <input type="text" name="previous_participants" id="previous_participants" value="{{$competition->prizes}}">
+                <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->prizes}}">
             </div>
-            {{ Form::submit('UPDATE', array('class' => 'btn btn-primary')) }}
+            <div class="form-group">
+                {{ Form::submit('update', array('class' => 'btn btn-secondary')) }}
+            </div>
         {!! Form::close() !!}
     </div>
 

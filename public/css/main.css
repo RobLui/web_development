@@ -54,9 +54,10 @@ html, body {
 .btn{
     margin:0 auto;
 }
+
 .dashboard{
     height:15em;
-    margin-top:10em;
+    margin-top:7em;
     display:block;
     border-radius: 1em;
     opacity: 0.9;
@@ -69,11 +70,24 @@ html, body {
     font-size:1.5em;
 }
 .dashboard:first-child{
-    background-color:dimgrey;
+    background-color:#61BB46;
 }
 .dashboard:nth-child(2){
-    background-color:darkgrey;
+    background-color:#FDB827;
 }
 .dashboard:nth-child(3){
-    background-color:grey;
+    background-color:#F5821F;
+}
+.dashboard:nth-child(4){
+    background-color:#E03A3E;
+}
+.dashboard:nth-child(5){
+    background-color:#963D97;
+}
+.dashboard:nth-child(6){
+    background-color:#009DDC;
+}
+.btn-primary{
+    border-color: #61BB46;
+    background-color: #61BB46;
 }

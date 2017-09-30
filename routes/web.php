@@ -45,6 +45,17 @@ Route::get('dashboard', 'DashboardController@index')
     ->name('editQ')
     ;
 
+// --------QUESTIONS--------
+// -------------------------
+    Route::get('competition/prizes', 'PrizeController@index')
+    ->name('showP')
+    ;
+    Route::get('competition/prize/create', 'PrizeController@create')
+    ->name('createP')
+    ;
+    Route::get('competition/prize/edit/{id}', 'PrizeController@edit')
+    ->name('editP');
+
 // --------REGISTRATIONS--------
 // -----------------------------
     Route::get('competition/registration', 'RegistrationController@index')

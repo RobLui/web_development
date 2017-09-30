@@ -14,6 +14,15 @@
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('registration') }}">Registratie</a>
                 </div>
+                <div class="col-md-4 text-center dashboard">
+                    <a href="{{ route('showQ') }}">Vragen</a>
+                </div>
+                <div class="col-md-4 text-center dashboard">
+                    <a href="{{ route('showP') }}">Prijzen</a>
+                </div>
+                <div class="col-md-4 text-center dashboard">
+                    <a href="{{ route('registration') }}">Instellingen</a>
+                </div>
             </div>
         </div>
     </div>

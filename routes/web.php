@@ -6,6 +6,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// --------DASHBOARD--------
+// ---------------------------
+
+Route::get('dashboard', 'DashboardController@index')
+    ->name('dashboard')
+;
+
 // --------COMPETITION--------
 // ---------------------------
     Route::get('competition', 'CompetitionController@index')

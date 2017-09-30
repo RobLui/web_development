@@ -13,7 +13,7 @@ class CreateCompetitionTable extends Migration
      */
     public function up()
     {
-        Schema::create('competition', function (Blueprint $table) {
+        Schema::create('competitions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('explanation');
             $table->string('prizes');
@@ -29,6 +29,6 @@ class CreateCompetitionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competition');
+        Schema::dropIfExists('competitions');
     }
 }

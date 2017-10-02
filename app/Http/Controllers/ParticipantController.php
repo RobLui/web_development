@@ -11,4 +11,5 @@ class ParticipantController extends Controller
     {
         $parts = Registration::all();
         return view('participants')->withParts($parts);
-    }}
+    }
+}

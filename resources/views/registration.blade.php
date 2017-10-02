@@ -2,9 +2,11 @@
 
 @section('content')
     @include("common.messages")
+    @include("common.errors")
     <div class="col-md-4 col-md-offset-4 text-center">
         <h2>Registratie</h2>
         {!! Form::open(array('route' => 'registrationcreate','class' => 'form-horizontal')) !!}
+            {{ csrf_field() }}
             <div class="form-group">
                 {{ Form::label('Voornaam'), 'firstname' }}
                 {{ Form::text("firstname"),array('class' => 'form-control') }}

@@ -11,6 +11,7 @@ class Question extends Model
         'title',
         'text',
         'difficulty',
-        'answerd'
+        'answerd',
+        'active'
     ];
 }

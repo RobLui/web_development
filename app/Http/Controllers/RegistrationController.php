@@ -17,7 +17,7 @@ class RegistrationController extends Controller
 
     public function create(Request $req){
 
-        $validator = Validator::make($req->all(),[
+        $validator = $this->validate($req, [
             'firstname'     => 'required|max:255',
             'lastname'      => 'required|max:255',
             'age'           => 'required|max:255',
@@ -25,9 +25,8 @@ class RegistrationController extends Controller
             'housenumber'   => 'requi   red|max:255',
             'municipality'  => 'required|max:255',
             'postalcode'    => 'required|max:255',
-            'email'         => 'required|max:255',
+            'email'         => 'required|unique|max:255'
         ]);
-
 
         if (!$validator->fails())
         {
@@ -47,9 +46,7 @@ class RegistrationController extends Controller
         }
         else
         {
-            Session::flash("error", ("Something went wrong!"));
             return redirect('competition/registration');
         }
     }
-
 }

@@ -16,10 +16,10 @@
             </div>
             <div class="form-group">
                 {{ Form::label('Vorige deelnemers'), "previous_participants" }}
-                <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->prizes}}">
+                <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->previous_participants}}">
             </div>
             <div class="form-group">
-                {{ Form::submit('update', array('class' => 'btn btn-secondary')) }}
+                {{ Form::submit('submit', array('class' => 'btn btn-secondary')) }}
             </div>
         {!! Form::close() !!}
     </div>

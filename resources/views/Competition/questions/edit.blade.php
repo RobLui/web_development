@@ -1,42 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-
-    @include("common.messages")
-    @include("common.errors")
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <h2>Vraag aanmaken</h2>
-            {!! Form::open(array('route' => 'competitioncreate','class' => 'form-horizontal')) !!}
-
-            <div class="col-md-4">
-                {{ Form::label('category'),array('class' =>  'form-control' )}}
-                {{ Form::textarea("category"),array('class' => 'form-control') }}
+    @if($question)
+        <div class="container">
+            @include("common.messages")
+            @include("common.errors")
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <h2 class="text-center" >Vraag Aanpassen</h2>
+                    {!! Form::open(array('route' => 'postEditQ','class' => 'form-horizontal')) !!}
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            {{ Form::label('Categorie'), "category" }}
+                            <input type="text" class="form-control" name="category" id="category" value="{{$question->category}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('Titel'), "title" }}
+                            <input type="text" class="form-control" name="title" id="title" value="{{$question->title}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('Tekst'), "text" }}
+                            <input type="text" class="form-control" name="text" id="text" value="{{$question->text}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('Moeilijkheid'), "difficulty" }}
+                            <input type="text" class="form-control" name="difficulty" id="difficulty" value="{{$question->difficulty}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('Antwoord'), "answerd" }}
+                            <input type="text" class="form-control" name="answerd" id="answerd" value="{{$question->answerd}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::label('active'), "active" }}
+                            <input type="checkbox" class="form-control" name="active" id="active" value="{{$question->active}}">
+                        </div>
+                        <div class="form-group">
+                            {{ Form::submit('submit', array('class' => 'btn btn-secondary')) }}
+                        </div>
+                    {!! Form::close() !!}
+                </div>
             </div>
-            <div class="col-md-4">
-                {{ Form::label('title'),array('class' =>  'form-control' )}}
-                {{ Form::textarea("title"),array('class' => 'form-control') }}
-            </div>
-            <div class="col-md-4">
-                {{ Form::label('text'),array('class' =>  'form-control' )}}
-                {{ Form::textarea("text"),array('class' => 'form-control') }}
-            </div>
-            <div class="col-md-4">
-                {{ Form::label('difficulty'),array('class' =>  'form-control' )}}
-                {{ Form::textarea("difficulty"),array('class' => 'form-control') }}
-            </div>
-            <div class="col-md-4">
-                {{ Form::label('answerd'),array('class' =>  'form-control' )}}
-                {{ Form::textarea("answerd"),array('class' => 'form-control') }}
-            </div>
-            <div class="col-md-4">
-                {{ Form::checkbox("active"),array('class' => 'form-control') }}
-            </div>
-            <div class="col-md-4">
-                {{ Form::submit('Toevoegen', array('class' => 'btn btn-secondary')) }}
-            </div>
-            {!! Form::close() !!}
         </div>
-    </div>
+    @endif
 @endsection
-

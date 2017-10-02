@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->string('text');
             $table->string('difficulty');
             $table->string('answerd');
-            $table->string('active');
+            $table->string('active')->nullable();
             $table->timestamps();
         });
     }

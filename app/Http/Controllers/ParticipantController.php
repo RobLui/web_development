@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Participant;
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class ParticipantController extends Controller
 {
@@ -40,7 +40,7 @@ class ParticipantController extends Controller
         $participant->ipadress = $req->ip();
         $participant->save();
         Session::flash("success", ("Saved!"));
-        return redirect('participants');
+        return redirect('competition/participants');
 
     }
 }

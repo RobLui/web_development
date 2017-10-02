@@ -9,7 +9,7 @@ class CompetitionController extends Controller
 {
     public function index(){
         $competition = Competition::findOrFail(1);
-        return view('Competition/index/show')
+        return view('Competition.index.show')
             ->withCompetition($competition)
             ;
     }
@@ -23,7 +23,7 @@ class CompetitionController extends Controller
             $comp->previous_participants = $req->previous_participants;
             $comp->save();
         }
-        return view('Competition/index/create')
+        return view('Competition.index.create')
             ;
     }
 
@@ -36,7 +36,7 @@ class CompetitionController extends Controller
             $comp->previous_participants = $req->previous_participants;
             $comp->save();
         }
-        return view('Competition/index/edit')
+        return view('Competition.index.edit')
             ->withCompetition($comp)
             ;
     }

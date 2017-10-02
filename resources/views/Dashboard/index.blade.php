@@ -6,13 +6,13 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="links">
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('competitionedit') }}">Wedstrijd</a>
+                    <a href="{{ route('registration') }}">Deelnemen (form)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('participants') }}">Deelnemers</a>
+                    <a href="{{ route('competitionedit') }}">Wedstrijd (form)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('registration') }}">Registratie</a>
+                    <a href="{{ route('participants') }}">Deelnemers (list)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('showQ') }}">Vragen</a>

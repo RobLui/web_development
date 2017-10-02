@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class QuestionController extends Controller
 {
     public function index(){
-        $questions = Question::where('active', 1)->first();
-        return view('Competition/questions/show');
+        $questions = Question::where('active', 0)->first();
+        return view('Competition/questions/show')->withQuestions($questions);
     }
 
     public function create(){

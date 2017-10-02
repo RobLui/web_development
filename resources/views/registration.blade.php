@@ -8,7 +8,7 @@
         {!! Form::open(array('route' => 'participantcreate','class' => 'form-horizontal')) !!}
             {{ csrf_field() }}
             <div class="form-group">
-                {{ Form::label('Voornaam'), 'firstname' }}
+                {{ Form::label('Voornaam'),'firstname' }}
                 {{ Form::text("firstname"),array('class' => 'form-control') }}
             </div>
             <div class="form-group">

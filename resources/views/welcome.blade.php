@@ -6,9 +6,9 @@
                 <img src="{{URL::asset('/images/apple_banner.png')}}" alt="Apple">
             </div>
             <div class="links">
+                <a href="{{ route('registration') }}">Deelnemen</a>
                 <a href="{{ route('competition') }}">Wedstrijd</a>
                 <a href="{{ route('participants') }}">Deelnemers</a>
-                <a href="{{ route('registration') }}">Registratie</a>
             </div>
         </div>
     </div>

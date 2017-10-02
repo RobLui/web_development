@@ -12,7 +12,7 @@
                     <a href="{{ route('participants') }}">Deelnemers</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('registration') }}">Registratie</a>
+                    <a href="{{ route('participants') }}">Registratie</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('showQ') }}">Vragen</a>

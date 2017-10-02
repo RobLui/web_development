@@ -41,6 +41,5 @@ class RegistrationController extends Controller
         $registration->save();
         Session::flash("success", ("Saved!"));
         return view('registration');
-
     }
 }

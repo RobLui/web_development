@@ -61,14 +61,15 @@ Route::get('dashboard', 'DashboardController@index')
     Route::get('competition/registration', 'RegistrationController@index')
     ->name('registration')
     ;
-    Route::post('competition/registration', 'RegistrationController@create')
-    ->name('registrationcreate')
-    ;
+
 
 // --------PARTICIPANTS--------
 // ----------------------------
     Route::get('competition/participants', 'ParticipantController@index')
     ->name('participants')
+    ;
+    Route::post('competition/participants', 'ParticipantController@create')
+    ->name('participantcreate')
     ;
 
 // --------CONFIG--------

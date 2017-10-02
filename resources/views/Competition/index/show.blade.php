@@ -19,7 +19,7 @@
                 <div class="col-md-4 col-sm-offset-4">
                     <h3>Vorige deelnemers</h3>
                     <p>{{ $competition->previous_participants }}</p>
-                    <a class="btn btn-primary" href="{{ route('registrationcreate') }}">IK WIL DEELNEMEN!</a>
+                    <a class="btn btn-primary" href="{{ route('registration') }}">IK WIL DEELNEMEN!</a>
                 </div>
             </div>
         </div>

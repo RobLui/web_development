@@ -24,7 +24,7 @@ class RegistrationController extends Controller
             'adress'        => 'required|max:255|string',
             'housenumber'   => 'required|max:255|Integer',
             'municipality'  => 'required|max:255|string',
-            'postalcode'    => 'required|max:255|Integer',
+            'postalcode'    => 'required|max:10000|Integer',
             'email'         => 'required|max:255'
         ]);
 

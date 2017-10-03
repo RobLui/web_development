@@ -66,26 +66,35 @@ html, body {
     height:100%;
     padding-top:25%;
     display:block;
-    color:white;
+    color:black;
     font-size:1.5em;
 }
+.dashboard a:hover{
+    text-underline: none;
+}
 .dashboard:first-child{
-    background-color:#61BB46;
+    /*background-color:#61BB46;*/
+    border:0.2em solid #5AC56B;
 }
 .dashboard:nth-child(2){
-    background-color:#FDB827;
+    /*background-color:#FDB827;*/
+    border:0.2em solid #A3EB60;
 }
 .dashboard:nth-child(3){
-    background-color:#F5821F;
+    /*background-color:#F5821F;*/
+    border:0.2em solid #F7F956;
 }
 .dashboard:nth-child(4){
-    background-color:#E03A3E;
+    /*background-color:#E03A3E;*/
+    border:0.2em solid #EC4236;
 }
 .dashboard:nth-child(5){
-    background-color:#963D97;
+    /*background-color:#963D97;*/
+    border:0.2em solid #C93CE1;
 }
 .dashboard:nth-child(6){
-    background-color:#009DDC;
+    /*background-color:#009DDC;*/
+    border:0.2em solid #3382F7;
 }
 .btn-primary{
     border-color: #61BB46;
@@ -93,25 +102,25 @@ html, body {
 }
 .flex-center{
     margin-top:-5em;
-    background-position: center;
-    background-image: url('../images/retro_apple.jpg') !important;
-    background-size: contain;
+    /*background-position: center;*/
+    /*background-image: url('../images/retro_apple.jpg') !important;*/
+    /*background-size: contain;*/
 }
 
+.navbar-default{
+    border-color:#61BB46;
+}
 .retro-apple{
-    background-color:#5DBF0B;
+    /*background-color:#5DBF0B;*/
 }
 a {
-  color:white !important;
+  /*color:white !important;*/
 }
 .dropdown-menu,#app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li{
-    background-color:#5DBF0B; !important;
+    /*background-color:#5DBF0B; !important;*/
 }
 img{
     max-height:7em !important;
-}
-.navbar-default{
-    border-color: transparent;
 }
 .sess{
     padding-top:2em;

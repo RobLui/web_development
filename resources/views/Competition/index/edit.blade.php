@@ -24,7 +24,7 @@
                             <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->previous_participants}}">
                         </div>
                         <div class="form-group">
-                            {{ Form::submit('submit', array('class' => 'btn btn-secondary')) }}
+                            {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                         </div>
                     {!! Form::close() !!}
                 </div>

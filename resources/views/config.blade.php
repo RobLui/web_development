@@ -7,7 +7,16 @@
                 @include("common.errors")
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        {{ $mm }}
+                        <ul>
+                            @foreach($mm as $manager)
+                                <div class="col-md-4">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">{{ $manager->name }}</li>
+                                        <li class="list-group-item">{{ $manager->email }}</li>
+                                    </ul>
+                                </div>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
         @endif
@@ -31,7 +40,7 @@
                     @endforeach
                 </div>
                 <div class="form-group">
-                    {{ Form::submit('submit', array('class' => 'btn btn-secondary')) }}
+                    {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                 </div>
                 {!! Form::close() !!}
             </div>

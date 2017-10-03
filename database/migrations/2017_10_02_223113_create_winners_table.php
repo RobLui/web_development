@@ -15,6 +15,8 @@ class CreateWinnersTable extends Migration
     {
         Schema::create('winners', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('competition_id')->unsigned();
+            $table->foreign('competition_id')->references('id')->on('competitions');
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <h2 class="text-center" >Guide</h2>
-                    {!! Form::open(array('route' => 'competitionedit','class' => 'form-horizontal')) !!}
+                    {!! Form::open(array('route' => 'getCompE','class' => 'form-horizontal')) !!}
                         {{ csrf_field() }}
                         <div class="form-group">
                             {{ Form::label('Uitleg'), "explanation" }}

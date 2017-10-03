@@ -18,14 +18,14 @@ class ParticipantController extends Controller
     public function create(Request $req){
 
         $validator = $this->validate($req, [
-            'firstname'     => 'required|max:255',
-            'lastname'      => 'required|max:255',
-            'age'           => 'required|max:255',
-            'adress'        => 'required|max:255',
-            'housenumber'   => 'required|max:255',
-            'municipality'  => 'required|max:255',
-            'postalcode'    => 'required|max:255',
-            'email'         => 'required|max:255'
+            'firstname'     => 'required|max:255|string',
+            'lastname'      => 'required|max:255|string',
+            'age'           => 'required|max:255|Integer',
+            'adress'        => 'required|max:255|string',
+            'housenumber'   => 'required|max:255|Integer',
+            'municipality'  => 'required|max:255|string',
+            'postalcode'    => 'required|max:255|Integer',
+            'email'         => 'required|max:255|email'
         ]);
 
         $participant = new Participant();

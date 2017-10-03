@@ -6,6 +6,7 @@ use App\Competition;
 use App\Participant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ParticipantController extends Controller
 {
@@ -45,6 +46,16 @@ class ParticipantController extends Controller
         $participant->save();
         Session::flash("success", ("Saved!"));
         return redirect('competition/participants');
+    }
 
+    public function DownloadExcel(){
+    Excel::create('participants', function($excel)
+    {
+        $excel->sheet('Participants', function($list) {
+            $list->fromArray(Participant::all(), null, 'A4', false, false);
+        });
+
+    })
+    ->download('xls');
     }
 }

@@ -8,10 +8,9 @@ Auth::routes();
 
 // --------DASHBOARD--------
 // ---------------------------
-
-Route::get('dashboard', 'DashboardController@index')
-    ->name('dashboard')
-;
+    Route::get('dashboard', 'DashboardController@index')
+        ->name('dashboard')
+    ;
 
 // --------COMPETITION--------
 // ---------------------------
@@ -81,27 +80,30 @@ Route::get('dashboard', 'DashboardController@index')
     Route::post('competition/participants', 'ParticipantController@create')
     ->name('create_participants')
     ;
+    Route::post('competition/participants/gedrukt', 'ParticipantController@DownloadExcel')
+    ->name('drukknop')
+    ;
 
 // --------CONFIG--------
 // ----------------------------
-Route::get('/config', 'ConfigController@index')
-    ->name('config')
-;
-Route::get('/config/emailmanager/show', 'ConfigController@show')
-    ->name('show_email_manager')
-;
-Route::get('/config/emailmanager/create', 'ConfigController@create')
-    ->name('create_email_manager')
-;
-Route::post('/config/emailmanager/create', 'ConfigController@create')
-    ->name('create_email_manager')
-;
-Route::get('/config/emailmanager/edit', 'ConfigController@edit')
-    ->name('edit_email_manager')
-;
-Route::post('/config/emailmanager/edit', 'ConfigController@edit')
-    ->name('edit_email_manager')
-;
+    Route::get('/config', 'ConfigController@index')
+        ->name('config')
+    ;
+    Route::get('/config/emailmanager/show', 'ConfigController@show')
+        ->name('show_email_manager')
+    ;
+    Route::get('/config/emailmanager/create', 'ConfigController@create')
+        ->name('create_email_manager')
+    ;
+    Route::post('/config/emailmanager/create', 'ConfigController@create')
+        ->name('create_email_manager')
+    ;
+    Route::get('/config/emailmanager/edit', 'ConfigController@edit')
+        ->name('edit_email_manager')
+    ;
+    Route::post('/config/emailmanager/edit', 'ConfigController@edit')
+        ->name('edit_email_manager')
+    ;
 
 
 

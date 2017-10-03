@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\Participant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
+use function redirect;
 
 class ParticipantController extends Controller
 {
@@ -49,13 +51,22 @@ class ParticipantController extends Controller
     }
 
     public function DownloadExcel(){
-    Excel::create('participants', function($excel)
-    {
-        $excel->sheet('Participants', function($list) {
-            $list->fromArray(Participant::all(), null, 'A4', false, false);
-        });
+        Excel::create('participants', function($excel)
+        {
+            $excel->sheet('Participants', function($list) {
+                $list->fromArray(Participant::all(), null, 'A4', false, false);
+            });
 
-    })
-    ->download('xls');
+        })
+            ->download('xls');
+    }
+
+    public function SendMail(){
+        //send('view')
+        Mail::send('welcome', [], function ($message){
+            $message->to('robbertluit@hotmail.com')->subject('Mandril mailer works');
+        });
+        Session::flash("success", ("Mail verstuurd!"));
+        return redirect()->back();
     }
 }

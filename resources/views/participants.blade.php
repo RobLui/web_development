@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h2 class="col-md-12">Deelnemers:</h2>
-                @if($parts)
-                    @foreach($parts as $part )
-                        <div class="col-md-4">
+                <div class="col-md-4">
+                    @if($parts)
+                        @foreach($parts as $part )
                             <ul class="list-group">
                                 <li class="list-group-item">Naam: {{ $part->firstname }} {{ $part->lastname }}</li>
                                 <li class="list-group-item">Leeftijd: {{$part->age}}</li>
@@ -18,19 +18,19 @@
                                 <li class="list-group-item">Gemeente: {{$part->postalcode}} {{$part->municipality}}</li>
                                 <li class="list-group-item">IP: {{ $part->ipadress }}</li>
                             </ul>
-                        </div>
-                    @endforeach
-                @endif
+                        @endforeach
+                    @endif
+                    {{--TEMPORARY--}}
+                    @if(auth::user()->email == "robbertluit@hotmail.com")
+                        {!! Form::open(array('route' => 'create_excel')) !!}
+                            {{ Form::submit('Download excel', array('class' => 'btn btn-primary pull-left')) }}
+                        {!! Form::close() !!}
+                        {!! Form::open(array('route' => 'send_mail')) !!}
+                            {{ Form::submit('Send mail', array('class' => 'btn btn-primary pull-right')) }}
+                        {!! Form::close() !!}
+                    @endif
+                </div>
             </div>
         </div>
-        @if(auth::check())
-            <div class="col-md-4">
-                {!! Form::open(array('route' => 'drukknop')) !!}
-                    <div class="col-md-4">
-                    {{ Form::submit('download excel', array('class' => 'btn btn-primary')) }}
-                    </div>
-                {!! Form::close() !!}
-            </div>
-        @endif
     </div>
 @endsection

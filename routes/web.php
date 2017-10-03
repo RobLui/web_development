@@ -126,8 +126,14 @@ Auth::routes();
 
 // --------EXCEL FUNCTIONALITY--------
 // ----------------------------
-Route::post('competition/participants/gedrukt', 'ParticipantController@DownloadExcel')
-    ->name('drukknop')
+Route::post('competition/participants/excel', 'ParticipantController@DownloadExcel')
+    ->name('create_excel')
     ->middleware('auth');
 ;
 
+// --------SEND MAIL--------
+// ----------------------------
+Route::post('competition/participants/mail', 'ParticipantController@SendMail')
+    ->name('send_mail')
+    ->middleware('auth');
+;

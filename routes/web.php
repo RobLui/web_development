@@ -90,6 +90,9 @@ Route::get('/config/emailmanager/show', 'ConfigController@show')
 Route::get('/config/emailmanager/create', 'ConfigController@create')
     ->name('createEm')
 ;
+Route::post('/config/emailmanager/create', 'ConfigController@create')
+    ->name('createEm')
+;
 Route::get('/config/emailmanager/edit', 'ConfigController@edit')
     ->name('editEm')
 ;

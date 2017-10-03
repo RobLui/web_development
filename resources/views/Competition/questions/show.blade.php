@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <h2>Vraag:</h2>
+                        <h2>Vraag: {{ $questions->title }}</h2>
                         <ul class="list-group">
                             <li class="list-group-item">
                                 {{ $questions->category }}

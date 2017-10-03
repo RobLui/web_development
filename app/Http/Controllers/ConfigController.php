@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Competition;
 use App\EmailManager;
 use Illuminate\Http\Request;
 
@@ -9,34 +10,47 @@ class ConfigController extends Controller
 {
     public function index()
     {
-        $emailManagers = EmailManager::all();
+        $mm = EmailManager::all();
+        $comps = Competition::all();
 
         return view("config")
-            ->withEmailmanagers($emailManagers)
+            ->withMm($mm)
+            ->withComps($comps)
             ;
     }
     public function show()
     {
-        $emailManagers = EmailManager::all();
+        $mm = EmailManager::all();
+        $comps = Competition::all();
 
         return view("config")
-            ->withEmailmanagers($emailManagers)
+            ->withMm($mm)
+            ->withComps($comps)
             ;
     }
-    public function create()
+    public function create(Request $req)
     {
-        $emailManagers = EmailManager::all();
-
+        $mm = EmailManager::all();
+        $comps = Competition::all();
+        if ($req->isMethod('POST'))
+        {
+            $mm = new EmailManager();
+            $mm->name = $req->name;
+            $mm->email = $req->email;
+            $mm->competition_id = $req->competition_id;
+            $mm->save();
+        }
         return view("config")
-            ->withEmailmanagers($emailManagers)
+            ->withMm($mm)
+            ->withComps($comps)
             ;
     }
     public function edit()
     {
-        $emailManagers = EmailManager::all();
+        $mm = EmailManager::all();
 
         return view("config")
-            ->withEmailmanagers($emailManagers)
+            ->withMm($mm)
             ;
     }
 }

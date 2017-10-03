@@ -5,6 +5,7 @@
         <div class="container">
             @include("common.messages")
             @include("common.errors")
+            {{--{{$competition->id}}--}}
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <h2 class="text-center" >Guide</h2>

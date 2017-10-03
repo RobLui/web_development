@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <h2 class="text-center" >Email managers</h2>
-                {!! Form::open(array('route' => 'createEm','class' => 'form-horizontal')) !!}
+                {!! Form::open(array('route' => 'create_email_manager','class' => 'form-horizontal')) !!}
                 {{ csrf_field() }}
                 <div class="form-group">
                     {{ Form::label('Naam'), "name" }}

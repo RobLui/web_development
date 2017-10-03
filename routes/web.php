@@ -20,50 +20,50 @@ Route::get('dashboard', 'DashboardController@index')
     ;
     //NEW
     Route::get('competition/create', 'CompetitionController@create')
-    ->name('competitioncreate')
+    ->name('create_competition')
     ;
     Route::post('competition/create', 'CompetitionController@create')
-    ->name('competitioncreate')
+    ->name('create_competition')
     ;
     //EDIT
     Route::get('competition/edit', 'CompetitionController@edit')
-    ->name('getCompE')
+    ->name('edit_competition')
     ;
     Route::post('competition/edit', 'CompetitionController@edit')
-    ->name('postCompE')
+    ->name('edit_competition')
     ;
 
 // --------QUESTIONS--------
 // -------------------------
     Route::get('competition/questions', 'QuestionController@index')
-    ->name('showQ')
+    ->name('show_questions')
     ;
     Route::get('competition/questions/create', 'QuestionController@create')
-    ->name('getCreateQ')
+    ->name('create_questions')
     ;
     Route::post('competition/questions/create', 'QuestionController@create')
-    ->name('postCreateQ')
+    ->name('create_questions')
     ;
     Route::get('competition/questions/edit', 'QuestionController@edit')
-    ->name('getEditQ')
+    ->name('edit_questions')
     ;
     Route::post('competition/questions/edit', 'QuestionController@edit')
-    ->name('postEditQ')
+    ->name('edit_questions')
     ;
 
 // --------PRIZES--------
 // -------------------------
     Route::get('competition/prizes', 'PrizeController@index')
-    ->name('showP')
+    ->name('show_prizes')
     ;
     Route::get('competition/prizes/create', 'PrizeController@create')
-    ->name('createP')
+    ->name('create_prizes')
     ;
     Route::post('competition/prizes/create', 'PrizeController@create')
-    ->name('createP')
+    ->name('create_prizes')
     ;
     Route::get('competition/prizes/edit/{id}', 'PrizeController@edit')
-    ->name('editP');
+    ->name('edit_prizes');
 
 
 // --------REGISTRATIONS--------
@@ -79,7 +79,7 @@ Route::get('dashboard', 'DashboardController@index')
     ->name('participants')
     ;
     Route::post('competition/participants', 'ParticipantController@create')
-    ->name('participantcreate')
+    ->name('create_participants')
     ;
 
 // --------CONFIG--------
@@ -88,16 +88,19 @@ Route::get('/config', 'ConfigController@index')
     ->name('config')
 ;
 Route::get('/config/emailmanager/show', 'ConfigController@show')
-    ->name('showEm')
+    ->name('show_email_manager')
 ;
 Route::get('/config/emailmanager/create', 'ConfigController@create')
-    ->name('createEm')
+    ->name('create_email_manager')
 ;
 Route::post('/config/emailmanager/create', 'ConfigController@create')
-    ->name('createEm')
+    ->name('create_email_manager')
 ;
 Route::get('/config/emailmanager/edit', 'ConfigController@edit')
-    ->name('editEm')
+    ->name('edit_email_manager')
+;
+Route::post('/config/emailmanager/edit', 'ConfigController@edit')
+    ->name('edit_email_manager')
 ;
 
 

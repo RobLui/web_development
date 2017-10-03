@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h2>Prijs aanmaken</h2>
-            {!! Form::open(array('route' => 'createP','class' => 'form-horizontal')) !!}
+            {!! Form::open(array('route' => 'create_prizes','class' => 'form-horizontal')) !!}
 
             <div class="col-md-10 form-group">
                 {{ Form::label('difficulty'),array('class' =>  'control-label' )}}
@@ -22,7 +22,7 @@
                 {{ Form::checkbox("active"),array('class' => 'form-control') }}
             </div>
             <div class="col-md-4 ">
-                {{ Form::submit('Toevoegen', array('class' => 'btn btn-secondary')) }}
+                {{ Form::submit('Toevoegen', array('class' => 'btn btn-primary')) }}
             </div>
             {!! Form::close() !!}
         </div>

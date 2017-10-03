@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Competition;
 use App\Participant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -28,6 +29,8 @@ class ParticipantController extends Controller
             'email'         => 'required|max:255|email'
         ]);
 
+        $competition = Competition::find(1);
+        $comp_id = $competition['id'];
         $participant = new Participant();
         $participant->firstname = $req->firstname;
         $participant->lastname = $req->lastname;
@@ -38,6 +41,7 @@ class ParticipantController extends Controller
         $participant->postalcode = $req->postalcode;
         $participant->email = $req->email;
         $participant->ipadress = $req->ip();
+        $participant->competition_id = $comp_id;
         $participant->save();
         Session::flash("success", ("Saved!"));
         return redirect('competition/participants');

@@ -24,7 +24,12 @@
                     <a href="{{ route('config') }}">Instellingen</a>
                 </div>
             </div>
+
+        </div>
+        <div class="links col-md-10 col-md-offset-1 sess">
+            <a href="{{ route('createP') }}">Create prizes</a>
+            <a href="{{ route('getCreateQ') }}">Create questions</a>
+            <a href="{{ route('competitioncreate') }}">Create competition</a>
         </div>
     </div>
-
 @endsection

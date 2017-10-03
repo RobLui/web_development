@@ -111,5 +111,12 @@ img{
     max-height:7em !important;
 }
 .navbar-default{
-border-color: transparent;
+    border-color: transparent;
+}
+.sess{
+    padding-top:2em;
+}
+.sess a{
+    color:black !important;
+
 }

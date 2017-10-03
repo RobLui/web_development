@@ -59,6 +59,9 @@ Route::get('dashboard', 'DashboardController@index')
     Route::get('competition/prizes/create', 'PrizeController@create')
     ->name('createP')
     ;
+    Route::post('competition/prizes/create', 'PrizeController@create')
+    ->name('createP')
+    ;
     Route::get('competition/prizes/edit/{id}', 'PrizeController@edit')
     ->name('editP');
 

@@ -12,7 +12,7 @@
                     <a href="{{ route('edit_competition') }}">Wedstrijd (form)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('participants') }}">Deelnemers (list)</a>
+                    <a href="{{ route('show_participants') }}">Deelnemers (list)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('show_questions') }}">Vragen</a>

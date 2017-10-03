@@ -23,14 +23,14 @@
                 @endif
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            {!! Form::open(array('route' => 'drukknop')) !!}
-                <div class="col-md-4">
-                {{ Form::submit('download excel', array('class' => 'btn btn-primary')) }}
-                </div>
-            {!! Form::close() !!}
-        </div>
+        @if(auth::check())
+            <div class="col-md-4">
+                {!! Form::open(array('route' => 'drukknop')) !!}
+                    <div class="col-md-4">
+                    {{ Form::submit('download excel', array('class' => 'btn btn-primary')) }}
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        @endif
     </div>
 @endsection

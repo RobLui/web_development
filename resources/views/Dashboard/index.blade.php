@@ -9,7 +9,7 @@
                     <a href="{{ route('registration') }}">Deelnemen (form)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
-                    <a href="{{ route('competitionedit') }}">Wedstrijd (form)</a>
+                    <a href="{{ route('getCompE') }}">Wedstrijd (form)</a>
                 </div>
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('participants') }}">Deelnemers (list)</a>

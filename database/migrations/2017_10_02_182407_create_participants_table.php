@@ -24,6 +24,10 @@ class CreateParticipantsTable extends Migration
             $table->integer('postalcode');
             $table->string('email', 100)->unique();
             $table->string('ipadress', 45);
+//            $table->integer('period_id');
+//            $table->foreign('period_id')
+//                    ->references('period_id')->on('periods')
+//                    ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,4 +15,29 @@ class ConfigController extends Controller
             ->withEmailmanagers($emailManagers)
             ;
     }
+    public function show()
+    {
+        $emailManagers = EmailManager::all();
+
+        return view("config")
+            ->withEmailmanagers($emailManagers)
+            ;
+    }
+    public function create()
+    {
+        $emailManagers = EmailManager::all();
+
+        return view("config")
+            ->withEmailmanagers($emailManagers)
+            ;
+    }
+    public function edit()
+    {
+        $emailManagers = EmailManager::all();
+
+        return view("config")
+            ->withEmailmanagers($emailManagers)
+            ;
+    }
 }
+

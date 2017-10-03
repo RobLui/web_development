@@ -27,10 +27,10 @@ Route::get('dashboard', 'DashboardController@index')
     ;
     //EDIT
     Route::get('competition/edit', 'CompetitionController@edit')
-    ->name('competitionedit')
+    ->name('getCompE')
     ;
     Route::post('competition/edit', 'CompetitionController@edit')
-    ->name('competitionedit')
+    ->name('postCompE')
     ;
 
 // --------QUESTIONS--------
@@ -84,6 +84,16 @@ Route::get('dashboard', 'DashboardController@index')
 Route::get('/config', 'ConfigController@index')
     ->name('config')
 ;
+Route::get('/config/emailmanager/show', 'ConfigController@show')
+    ->name('showEm')
+;
+Route::get('/config/emailmanager/create', 'ConfigController@create')
+    ->name('createEm')
+;
+Route::get('/config/emailmanager/edit', 'ConfigController@edit')
+    ->name('editEm')
+;
+
 
 
 

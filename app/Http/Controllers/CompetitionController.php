@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CompetitionController extends Controller
 {
     public function index(){
-        $competition = Competition::findOrFail(1);
+        $competition = Competition::find(1);
         return view('Competition.index.show')
             ->withCompetition($competition)
             ;
@@ -28,7 +28,7 @@ class CompetitionController extends Controller
     }
 
     public function edit(Request $req){
-        $comp = Competition::findOrFail(1);
+        $comp = Competition::find(1);
         if ($req->isMethod("POST"))
         {
             $comp->explanation = $req->explanation;

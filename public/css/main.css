@@ -97,8 +97,8 @@ html, body {
     border:0.2em solid #3382F7;
 }
 .btn-primary{
-    border-color: #61BB46;
-    background-color: #61BB46;
+    border-color: #5AC56B;
+    background-color: #5AC56B;
 }
 .flex-center{
     margin-top:-5em;
@@ -113,10 +113,8 @@ html, body {
 .retro-apple{
     /*background-color:#5DBF0B;*/
 }
-a {
-  /*color:white !important;*/
-}
-.dropdown-menu,#app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li{
+.dropdown-menu,
+#app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li{
     /*background-color:#5DBF0B; !important;*/
 }
 img{
@@ -127,4 +125,7 @@ img{
 }
 .sess a{
     color:black !important;
+}
+#app > div > div > div.links > a{
+    color:white !important;
 }

@@ -6,7 +6,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// --------DASHBOARD--------
+// --------DASHBOARD----------
 // ---------------------------
     Route::get('dashboard', 'DashboardController@index')
         ->name('dashboard')
@@ -59,7 +59,7 @@ Auth::routes();
     ->middleware('auth')
     ;
 
-// --------PRIZES--------
+// --------PRIZES-----------
 // -------------------------
     Route::get('competition/prizes', 'PrizeController@index')
     ->name('show_prizes')
@@ -78,8 +78,8 @@ Auth::routes();
     ;
 
 
-    // --------REGISTRATIONS--------
-// -----------------------------
+// --------REGISTRATIONS-------
+// ----------------------------
     Route::get('competition/registration', 'RegistrationController@index')
     ->name('registration')
     ;
@@ -96,7 +96,7 @@ Auth::routes();
     ;
 
 
-// --------CONFIG--------
+// -----------CONFIG-----------
 // ----------------------------
     Route::get('/config', 'ConfigController@index')
         ->name('config')
@@ -123,6 +123,12 @@ Auth::routes();
         ->middleware('auth')
     ;
 
+// -----------PERIODES---------
+// ----------------------------
+Route::post('/periods/create', 'PeriodController@create')
+    ->name('create_period')
+    ->middleware('auth');
+;
 
 // --------EXCEL FUNCTIONALITY--------
 // ----------------------------

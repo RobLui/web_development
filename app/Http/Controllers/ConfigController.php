@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Competition;
 use App\EmailManager;
+use App\Period;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
@@ -12,20 +13,24 @@ class ConfigController extends Controller
     {
         $mm = EmailManager::all();
         $comps = Competition::all();
+        $periods = Period::all();
 
         return view("config")
             ->withMm($mm)
             ->withComps($comps)
+            ->withPeriods($periods)
             ;
     }
     public function show()
     {
         $mm = EmailManager::all();
         $comps = Competition::all();
+        $periods = Period::all();
 
         return view("config")
             ->withMm($mm)
             ->withComps($comps)
+            ->withPeriods($periods)
             ;
     }
     public function create(Request $req)

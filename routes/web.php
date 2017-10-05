@@ -125,7 +125,7 @@ Auth::routes();
 
 // -----------PERIODES---------
 // ----------------------------
-Route::post('/periods/create', 'PeriodController@create')
+Route::post('/periods/create', 'PeriodController@createŒ')
     ->name('create_period')
     ->middleware('auth');
 ;

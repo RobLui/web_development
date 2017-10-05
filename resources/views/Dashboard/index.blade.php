@@ -14,13 +14,16 @@
                 <div class="col-md-4 text-center dashboard">
                     <a href="{{ route('show_participants') }}">Deelnemers (list)</a>
                 </div>
-                <div class="col-md-4 text-center dashboard">
+            </div>
+
+            <div class="links two">
+                <div class="col-md-4 text-center dashboard two">
                     <a href="{{ route('show_questions') }}">Vragen</a>
                 </div>
-                <div class="col-md-4 text-center dashboard">
+                <div class="col-md-4 text-center dashboard two">
                     <a href="{{ route('show_prizes') }}">Prijzen</a>
                 </div>
-                <div class="col-md-4 text-center dashboard">
+                <div class="col-md-4 text-center dashboard two">
                     <a href="{{ route('config') }}">Instellingen</a>
                 </div>
             </div>

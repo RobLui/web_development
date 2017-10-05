@@ -31,7 +31,8 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Competition') }}
+                        {{--{{ config('app.name', 'Competition') }}--}}
+                        <img style=" height:1em;" class="img-responsive" src="{{URL::asset('/images/apple_banner.png')}}" alt="Logo">
                     </a>
                 </div>
 

@@ -4,8 +4,12 @@
     <div class="container">
         @include("common.messages")
         @include("common.errors")
+            <div class="content">
+                <div class="links">
+                    <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
+                </div>
+            </div>
         @if(count($questions) > 0)
-            <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <h2>Vraag: {{ $questions->title }}</h2>
@@ -27,5 +31,4 @@
                 </div>
             </div>
         @endif
-    </div>
 @endsection

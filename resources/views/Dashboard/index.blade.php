@@ -30,7 +30,6 @@
 
         </div>
         <div class="links col-md-10 col-md-offset-1 sess">
-            <a href="{{ route('create_prizes') }}">Create prizes</a>
             <a href="{{ route('create_questions') }}">Create questions</a>
             <a href="{{ route('create_competition') }}">Create competition</a>
         </div>

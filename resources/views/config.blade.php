@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('Email'), "email" }}
-                        <input type="text" class="form-control" name="email" id="email">w
+                        <input type="text" class="form-control" name="email" id="email">
                     </div>
                     <div class="form-group">
                         {{ Form::label('Competitie ID'), "competition_id" }}

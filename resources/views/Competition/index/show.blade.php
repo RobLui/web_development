@@ -5,18 +5,26 @@
         <div class="container">
             @include("common.messages")
             @include("common.errors")
-            <div class="flex-center position-ref full-height">
+            <div class="col-md-12">
                 <div class="content">
-                    <h3>Uitleg</h3>
-                    <p>{{ $competition->explanation }}</p>
-                    <h3>Prijzen</h3>
-                    <p>{{ $competition->prizes }}</p>
-                    <h3>Vorige deelnemers</h3>
-                    <p>{{ $competition->previous_participants }}</p>
-                    <a class="btn btn-primary" href="{{ route('registration') }}">IK WIL DEELNEMEN!</a>
+                    <div class="col-md-4">
+                        <h2>Uitleg</h2>
+                        <p>{{ $competition->explanation }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Prijzen</h2>
+                        <p>{{ $competition->prizes }}</p>
+                    </div>
+                    <div class="col-md-4">
+                    <h2>Vorige deelnemers</h2>
+                        <p>{{ $competition->previous_participants }}</p>
+                        </div>
+                    <a class="btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
                 </div>
             </div>
         </div>
+    @else
+        <a class="btn btn-primary" href="{{ route('create_competition') }}">Wedstrijd aanmaken</a>
     @endif
 @endsection
 

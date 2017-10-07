@@ -51,12 +51,12 @@
                 {!! Form::open(array('route' => 'create_period')) !!}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        {{ Form::label('Start'), "start_date" }}
-                        <input type="text" class="form-control"     name="name" id="name">
+                        {{ Form::label('Start'), "startDate" }}
+                        <input type="text" class="form-control" name="startDate" id="startDate">
                     </div>
                     <div class="form-group">
-                        {{ Form::label('Eind'), "end_date" }}
-                        <input type="text" class="form-control" name="email" id="email">
+                        {{ Form::label('Eind'), "endDate" }}
+                        <input type="text" class="form-control" name="endDate" id="endDate">
                     </div>
                     <div class="form-group">
                         {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
@@ -74,7 +74,6 @@
                         @endforeach
                     </ul>
                 @endif
-
             </div>
         </div>
     </div>

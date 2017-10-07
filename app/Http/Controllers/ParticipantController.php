@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Competition;
+use App\EmailManager;
 use App\Participant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -47,7 +48,8 @@ class ParticipantController extends Controller
         $participant->competition_id = $comp_id;
         $participant->save();
         Session::flash("success", ("Saved!"));
-        return redirect('competition/participants');
+
+        return redirect()->back();
     }
 
     public function DownloadExcel(){
@@ -64,7 +66,13 @@ class ParticipantController extends Controller
     public function SendMail(){
         //send('view')
         Mail::send('welcome', [], function ($message){
-            $message->to('robbertluit@hotmail.com')->subject('Mandril mailer works');
+            $emailmanagers = EmailManager::all();
+            foreach ($emailmanagers as $m)
+            {
+//                $message->to('robbertluit@hotmail.com')->subject('Participants list');
+                $message->to($m->email)->subject('Participants list');
+            }
+//            $message->to('robbertluit@hotmail.com')->subject('Mailgun mailer works');
         });
         Session::flash("success", ("Mail verstuurd!"));
         return redirect()->back();

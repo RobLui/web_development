@@ -59,24 +59,6 @@ Auth::routes();
     ->middleware('auth')
     ;
 
-// --------PRIZES-----------
-// -------------------------
-    Route::get('competition/prizes', 'PrizeController@index')
-    ->name('show_prizes')
-    ;
-    Route::get('competition/prizes/create', 'PrizeController@create')
-    ->name('create_prizes')
-    ->middleware('auth')
-    ;
-    Route::post('competition/prizes/create', 'PrizeController@create')
-    ->name('create_prizes')
-    ->middleware('auth')
-    ;
-    Route::get('competition/prizes/edit/{id}', 'PrizeController@edit')
-    ->name('edit_prizes')
-    ->middleware('auth')
-    ;
-
 
 // --------REGISTRATIONS-------
 // ----------------------------

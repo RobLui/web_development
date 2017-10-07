@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Period;
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -18,11 +19,13 @@ class PeriodController extends Controller
         if ($validator)
         {
             $period = new Period();
-            $period->startDate = $req->startDate;
-            $period->endDate = $req->endDate;
+            $period->startDate = DateTime::dateTime($req->startDate);
+            $period->endDate = DateTime::dateTime($req->endDate);
+            $period->competition_id = $req->competition_id;
+            $period->prize = $req->prize;
             $period->save();
             Session::flash('success','Periode toegevoegd');
         }
-        return view('config.index');
+        return view('config');
     }
 }

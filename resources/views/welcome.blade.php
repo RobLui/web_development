@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="flex-center position-ref full-height">
-            <div class="content">
+            <div class="content homepage">
                 <h2>Speel mee en win deze prachtige retro iPhone!</h2>
                 <div class="title m-b-md">
                     <img class="img-responsive" src="{{URL::asset('/images/iphone_red.png')}}" alt="Apple">

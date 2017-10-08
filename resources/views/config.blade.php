@@ -4,7 +4,8 @@
     <div class="container">
         @include("common.messages")
         @include("common.errors")
-
+            <div class="col-sm-12">        <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+            </div>
             <div class="col-sm-6">
                 <h2>Excel ontvangers</h2>
 

@@ -7,14 +7,15 @@
         <div class="row">
             {{--TEMPORARY--}}
             <div class="col-md-12">
+                <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
                 @if(auth::user()->email == "robbertluit@hotmail.com")
 
                     {!! Form::open(array('route' => 'create_excel')) !!}
-                        {{ Form::submit('Download Excel', array('class' => 'btn btn-primary pull-left')) }}
+                        {{ Form::submit('Download Excel', array('class' => 'btn btn-primary pull-right')) }}
                     {!! Form::close() !!}
 
                     {!! Form::open(array('route' => 'send_mail')) !!}
-                        {{ Form::submit('Verstuur mail', array('class' => 'btn btn-primary')) }}
+                        {{ Form::submit('Verstuur mail', array('class' => 'btn btn-primary pull-right')) }}
                     {!! Form::close() !!}
                 @endif
                 <h2>Deelnemers:</h2>

@@ -4,9 +4,6 @@
     <div class="container">
         @include("common.messages")
         @include("common.errors")
-        <div class="links">
-            <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
-        </div>
         @if(count($questions) > 0)
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
@@ -30,6 +27,11 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        @endif
+        @if(Auth::check())
+            <div class="links">
+                <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
             </div>
         @endif
 @endsection

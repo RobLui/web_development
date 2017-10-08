@@ -26,11 +26,13 @@
             </div>
         </div>
         @else
-            <div class="col-sm-12">
-                <div class="col-sm-5 col-sm-offset-5">
-                    <a class="btn btn-primary" href="{{ route('create_competition') }}">Wedstrijd aanmaken</a>
+            @if(Auth::check())
+                <div class="col-sm-12">
+                    <div class="col-sm-5 col-sm-offset-5">
+                        <a class="btn btn-primary" href="{{ route('create_competition') }}">Wedstrijd aanmaken</a>
+                    </div>
                 </div>
-            </div>
+            @endif
         @endif
 
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class QuestionController extends Controller
@@ -32,9 +33,10 @@ class QuestionController extends Controller
                 $question->answerd = $req->answerd;
                 $question->active = $req->active;
                 $question->save();
+                Session::flash('success','Excel email ontvanger toegevoegd');
             }
         }
-        return view('Competition.questions.create');
+        return redirect()->back();
     }
 
     public function edit(Request $req){

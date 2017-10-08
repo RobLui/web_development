@@ -111,6 +111,14 @@ Route::post('/periods/create', 'PeriodController@create')
     ->name('create_period')
     ->middleware('auth');
 ;
+Route::post('/periods/edit/{id}', 'PeriodController@edit')
+    ->name('edit_period')
+    ->middleware('auth');
+;
+Route::get('/periods/edit/{id}', 'PeriodController@edit')
+    ->name('edit_period')
+    ->middleware('auth');
+;
 
 // --------EXCEL FUNCTIONALITY--------
 // ----------------------------

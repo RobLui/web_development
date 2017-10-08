@@ -5,11 +5,12 @@
         @include("common.messages")
         @include("common.errors")
 
-        <div class="row">
-            {{-- --}}
-            <div class="col-md-4 col-md-offset-2">
-                <h2>E-mail Managers</h2>
-                {!! Form::open(array('route' => 'create_email_manager')) !!}
+            <div class="col-sm-6">
+                <h2>Excel ontvangers</h2>
+
+{{--START INSERT MANAGER --}}
+                <div class="col-md-6">
+                {!! Form::open(array('route' => 'create_email_manager', 'class' => 'form-horizontal')) !!}
                     {{ csrf_field() }}
                     <div class="form-group">
                         {{ Form::label('Naam'), "name" }}
@@ -29,27 +30,36 @@
                         {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                     </div>
                 {!! Form::close() !!}
-                @if($mm)
-                    @foreach($mm as $manager)
-                    <ul class="list-group">
-                        <li class="list-group-item">Naam: {{ $manager->name }}</li>
-                        <li class="list-group-item">E-mail: {{ $manager->email }}</li>
-                    </ul>
-                    @endforeach
-                @endif
+                </div>
+{{--END INSERT MANAGER --}}
+
+{{--START MANAGERS --}}
+                <div class="col-md-6">
+                    @if(count($mm) > 0)
+                        @foreach($mm as $manager)
+                        <ul class="list-group">
+                            <li class="list-group-item active">Manager ID: {{ $manager->id }}</li>
+                            <li class="list-group-item">Naam: {{ $manager->name }}</li>
+                            <li class="list-group-item">E-mail: {{ $manager->email }}</li>
+                        </ul>
+                        @endforeach
+                    @endif
+                </div>
+{{--END MANAGERS --}}
             </div>
 
-            {{-- --}}
-            <div class="col-md-4">
+{{-- START INSERT PERIODES --}}
+            <div class="col-sm-6">
                 <h2>Periodes</h2>
-                {!! Form::open(array('route' => 'create_period')) !!}
+                <div class="col-md-6">
+                {!! Form::open(array('route' => 'create_period', 'class' => 'form-horizontal'))  !!}
                     {{ csrf_field() }}
                     <div class="form-group">
-                        {{ Form::label('Start'), "startDate" }}
+                        {{ Form::label('startDate', 'Start', array('class' => 'control-label')) }}
                         <input type="text" class="form-control" name="startDate" id="startDate">
                     </div>
                     <div class="form-group">
-                        {{ Form::label('Eind'), "endDate" }}
+                        {{ Form::label('endDate', 'Eind', array('class' => 'control-label')) }}
                         <input type="text" class="form-control" name="endDate" id="endDate">
                     </div>
                     <div class="form-group">
@@ -67,25 +77,35 @@
                         {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                     </div>
                 {!! Form::close() !!}
+                </div>
+{{-- END INSERT PERIODES --}}
 
-                @if(count($periods) > 0)
-                    @foreach($periods as $p)
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                               ID: {{$p->id}}
-                            </li>
-                            <li class="list-group-item">
-                                start: {{ $p->startDate }}
-                            </li>
-                            <li class="list-group-item">
-                                eind: {{ $p->startDate }}
-                            </li>
-                            <li class="list-group-item">
-                                prijs: {{  $p->prize}}
-                            </li>
-                        </ul>
-                    @endforeach
-                @endif
+{{--START PERIODES--}}
+                <div class="col-md-6">
+                    @if(count($periods) > 0)
+                        @foreach($periods as $p)
+                            <ul class="list-group">
+                                <li class="list-group-item active">
+                                   Periode: {{$p->id}}
+                                </li>
+                                <li class="list-group-item">
+                                    Start: {{ $p->startDate }}
+                                </li>
+                                <li class="list-group-item">
+                                    Eind: {{ $p->startDate }}
+                                </li>
+                                <li class="list-group-item">
+                                    Prijs: {{  $p->prize}}
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="btn btn-primary" href="{{ route('edit_period', $p->id) }}">edit</a>
+                                </li>
+                            </ul>
+                        @endforeach
+                    @endif
+                </div>
+{{--END PERIODES--}}
+
             </div>
         </div>
     </div>

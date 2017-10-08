@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Competition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CompetitionController extends Controller
 {
@@ -23,7 +24,8 @@ class CompetitionController extends Controller
             $comp->previous_participants = $req->previous_participants;
             $comp->save();
         }
-        return view('Competition.index.create')
+        Session::flash('success','Wedstrijd toegevoegd');
+        return view('config')
             ;
     }
 

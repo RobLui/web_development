@@ -16,15 +16,22 @@
                         <p>{{ $competition->prizes }}</p>
                     </div>
                     <div class="col-md-4">
-                    <h2>Vorige deelnemers</h2>
+                        <h2>Vorige deelnemers</h2>
                         <p>{{ $competition->previous_participants }}</p>
-                        </div>
-                    <a class="btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
+                    </div>
                 </div>
             </div>
         </div>
-    @else
-        <a class="btn btn-primary" href="{{ route('create_competition') }}">Wedstrijd aanmaken</a>
-    @endif
+        @else
+            <div class="col-sm-12">
+                <div class="col-sm-5 col-sm-offset-5">
+                    <a class="btn btn-primary" href="{{ route('create_competition') }}">Wedstrijd aanmaken</a>
+                </div>
+            </div>
+        @endif
+
 @endsection
 

@@ -35,19 +35,28 @@ class ConfigController extends Controller
     }
     public function create(Request $req)
     {
+
         $mm = EmailManager::all();
         $comps = Competition::all();
+
         if ($req->isMethod('POST'))
         {
-            $mm = new EmailManager();
-            $mm->name = $req->name;
-            $mm->email = $req->email;
-            $mm->competition_id = $req->competition_id;
-            $mm->save();
+            $validator = $this->validate($req, [
+                'name'      => 'required|max:255',
+                'email'    => 'required|max:255|email',
+                'competition_id'    => 'required|integer'
+            ]);
+
+            if($validator){
+                $mm = new EmailManager();
+                $mm->name = $req->name;
+                $mm->email = $req->email;
+                $mm->competition_id = $req->competition_id;
+                $mm->save();
+                Session::flash('success','Excel email ontvanger toegevoegd');
+            }
         }
-        return view("config")
-            ->withMm($mm)
-            ->withComps($comps)
+        return redirect()->back();
             ;
     }
     public function edit()

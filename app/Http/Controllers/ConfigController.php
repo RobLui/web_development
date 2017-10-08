@@ -6,6 +6,7 @@ use App\Competition;
 use App\EmailManager;
 use App\Period;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ConfigController extends Controller
 {

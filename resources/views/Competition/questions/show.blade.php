@@ -24,6 +24,9 @@
                             <li class="list-group-item">
                                 {{ $questions->difficulty }}
                             </li>
+                            <li class="list-group-item">
+                               <a href="{{ route('edit_questions',$questions->id) }}" class="btn btn-primary">edit</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

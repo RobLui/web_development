@@ -33,14 +33,15 @@ class QuestionController extends Controller
                 $question->answerd = $req->answerd;
                 $question->active = $req->active;
                 $question->save();
-                Session::flash('success','Excel email ontvanger toegevoegd');
+                Session::flash('success',($question->title .' aangemaakt'));
             }
+            return redirect()->back();
         }
-        return redirect()->back();
+        return view('Competition.questions.create');
     }
 
-    public function edit(Request $req){
-        $question = Question::findOrFail(1);
+    public function edit(Request $req,$id){
+        $question = Question::findOrFail($id);
         if ($req->isMethod("POST"))
         {
             $validator = $this->validate($req, [
@@ -51,7 +52,6 @@ class QuestionController extends Controller
                 'answerd'       => 'required|max:255',
             ]);
             if($validator){
-                $question = new Question();
                 $question->category = $req->category;
                 $question->title = $req->title;
                 $question->text = $req->text;
@@ -59,6 +59,7 @@ class QuestionController extends Controller
                 $question->answerd = $req->answerd;
                 $question->active = $req->active;
                 $question->save();
+                Session::flash('success',($question->title .' aangepast'));
             }
         }
         return view('Competition.questions.edit')

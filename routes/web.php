@@ -50,11 +50,11 @@ Auth::routes();
     ->name('create_questions')
     ->middleware('auth')
     ;
-    Route::get('competition/questions/edit', 'QuestionController@edit')
+    Route::get('competition/questions/edit/{id}', 'QuestionController@edit')
     ->name('edit_questions')
     ->middleware('auth')
     ;
-    Route::post('competition/questions/edit', 'QuestionController@edit')
+    Route::post('competition/questions/edit/{id}', 'QuestionController@edit')
     ->name('edit_questions')
     ->middleware('auth')
     ;

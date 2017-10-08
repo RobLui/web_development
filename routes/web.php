@@ -76,7 +76,14 @@ Auth::routes();
     Route::post('competition/participants', 'ParticipantController@create')
     ->name('create_participants')
     ;
-
+    Route::get('competition/participants/edit/{id}', 'ParticipantController@edit')
+        ->name('edit_participants')
+        ->middleware('auth');
+    ;
+    Route::post('competition/participants/edit/{id}', 'ParticipantController@edit')
+        ->name('edit_participants')
+        ->middleware('auth');
+    ;
 
 // -----------CONFIG-----------
 // ----------------------------
@@ -131,5 +138,10 @@ Route::post('competition/participants/excel', 'ParticipantController@DownloadExc
 // ----------------------------
 Route::post('competition/participants/mail', 'ParticipantController@SendMail')
     ->name('send_mail')
+    ->middleware('auth');
+;
+
+Route::get('/secret', 'PeriodController@edit')
+    ->name('secret')
     ->middleware('auth');
 ;

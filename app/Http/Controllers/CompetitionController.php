@@ -24,7 +24,7 @@ class CompetitionController extends Controller
             $comp->prizes = $req->prizes;
             $comp->previous_participants = $req->previous_participants;
             $comp->save();
-        Session::flash('success','Wedstrijd toegevoegd');
+            Session::flash('success','Wedstrijd toegevoegd');
         }
         return view('Competition.index.create')
             ;

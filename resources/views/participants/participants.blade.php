@@ -28,6 +28,18 @@
                                 <li class="list-group-item">Adres: {{$part->adress}} {{$part->housenumber}}</li>
                                 <li class="list-group-item">Gemeente: {{$part->postalcode}} {{$part->municipality}}</li>
                                 <li class="list-group-item">IP: {{ $part->ipadress }}</li>
+                                <li class="list-group-item">Mag deelnemen:
+                                    @if($part->has_permission)
+                                        Ja
+                                        @else
+                                        Nee
+                                    @endif
+                                </li>
+                            @if(Auth::check())
+                                    <li class="list-group-item">
+                                        <a class="btn btn-primary" href="{{ route('edit_participants', $part->id) }}">edit</a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     @endforeach

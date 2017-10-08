@@ -27,19 +27,20 @@ class RegistrationController extends Controller
             'postalcode'    => 'required|max:10000|Integer',
             'email'         => 'required|max:255'
         ]);
-
-        $registration = new Registration();
-        $registration->firstname = $req->firstname;
-        $registration->lastname = $req->lastname;
-        $registration->age = $req->age  ;
-        $registration->adress = $req->adress;
-        $registration->housenumber = $req->housenumber;
-        $registration->municipality = $req->municipality;
-        $registration->postalcode = $req->postalcode;
-        $registration->email = $req->email;
-        $registration->ipadress = $req->ip();
-        $registration->save();
-        Session::flash("success", ("Saved!"));
+        if ($validator){
+            $registration = new Registration();
+            $registration->firstname = $req->firstname;
+            $registration->lastname = $req->lastname;
+            $registration->age = $req->age  ;
+            $registration->adress = $req->adress;
+            $registration->housenumber = $req->housenumber;
+            $registration->municipality = $req->municipality;
+            $registration->postalcode = $req->postalcode;
+            $registration->email = $req->email;
+            $registration->ipadress = $req->ip();
+            $registration->save();
+            Session::flash("success", ("Saved!"));
+        }
         return view('registration');
     }
 }

@@ -89,10 +89,10 @@
                                    Periode: {{$p->id}}
                                 </li>
                                 <li class="list-group-item">
-                                    Start: {{ $p->startDate }}
+                                    Start: {{ date('d-m-Y', strtotime($p->startDate)) }}
                                 </li>
                                 <li class="list-group-item">
-                                    Eind: {{ $p->startDate }}
+                                    Eind: {{ date('d-m-Y', strtotime($p->endDate)) }}
                                 </li>
                                 <li class="list-group-item">
                                     Prijs: {{  $p->prize}}

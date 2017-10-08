@@ -15,11 +15,11 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('startDate', 'Start', array('class' => 'control-label')) }}
-                        <input type="text" class="form-control" name="startDate" id="startDate" value="{{$period->startDate}}">
+                        <input type="text" class="form-control" name="startDate" id="startDate" value="{{date('d-m-Y', strtotime($period->startDate))}}">
                     </div>
                     <div class="form-group">
                         {{ Form::label('endDate', 'Eind', array('class' => 'control-label')) }}
-                        <input type="text" class="form-control" name="endDate" id="endDate" value="{{$period->endDate}}">
+                        <input type="text" class="form-control" name="endDate" id="endDate" value="{{date('d-m-Y', strtotime($period->endDate))}}">
                     </div>
                     <div class="form-group hidden">
                         {{ Form::select('competition_id', [$period->competition_id => $period->competition_id]) }}

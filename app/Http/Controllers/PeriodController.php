@@ -23,8 +23,8 @@ class PeriodController extends Controller
         if ($validator)
         {
             $period = new Period();
-            $period->startDate = DateTime::dateTime($req->startDate);
-            $period->endDate = DateTime::dateTime($req->endDate);
+            $period->startDate = date('Y-m-d', strtotime($req->startDate));
+            $period->endDate = date('Y-m-d', strtotime($req->endDate));
             $period->competition_id = $req->competition_id;
             $period->prize = $req->prize;
             $period->save();
@@ -47,8 +47,8 @@ class PeriodController extends Controller
             $period = Period::findOrFail($id);
             if ($period)
             {
-                $period->startDate = DateTime::dateTime($req->startDate);
-                $period->endDate = DateTime::dateTime($req->endDate);
+                $period->startDate = date('Y-m-d', strtotime($req->startDate));
+                $period->endDate = date('Y-m-d', strtotime($req->endDate));
                 $period->competition_id = $req->competition_id;
                 $period->prize = $req->prize;
                 $period->save();

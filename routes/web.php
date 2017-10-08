@@ -127,21 +127,22 @@ Route::get('/periods/edit/{id}', 'PeriodController@edit')
     ->middleware('auth');
 ;
 
-// --------EXCEL FUNCTIONALITY--------
-// ----------------------------
+// --------EXCEL------------
+// -------------------------
 Route::post('competition/participants/excel', 'ParticipantController@DownloadExcel')
     ->name('create_excel')
     ->middleware('auth');
 ;
 
-// --------SEND MAIL--------
-// ----------------------------
+// --------SEND MAIL---------
+// --------------------------
 Route::post('competition/participants/mail', 'ParticipantController@SendMail')
     ->name('send_mail')
     ->middleware('auth');
 ;
 
-Route::get('/secret', 'PeriodController@edit')
+// --------SECRET-----------
+// -------------------------
+Route::get('/secret', 'QuestionController@index')
     ->name('secret')
-    ->middleware('auth');
 ;

@@ -21,12 +21,10 @@
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('age', 'Leeftijd', array('class' => 'control-label pull-left')) }}
-{{--                                    {{ Form::text('age'), array('class' => 'form-control')  }}--}}
                                     {{ Form::input('age', 'age', null, ['class' => 'form-control']) }}
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('email', 'Email', array('class' => 'control-label pull-left')) }}
-{{--                                    {{ Form::text('email'), array('class' => 'form-control')  }}--}}
                                     {{ Form::input('email', 'email', null, ['class' => 'form-control']) }}
                                 </div>
                             </div>

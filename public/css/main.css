@@ -8,8 +8,7 @@ BLAUW       #3f8ad4
 */
 
 html, body {
-    background-image: url('../images/body-background.png') !important;
-    background-position: center;
+    background: url('../images/body-background.png') no-repeat center center fixed;
     background-size: cover;
     color: #636b6f;
     font-family: 'Raleway', sans-serif;

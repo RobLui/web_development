@@ -12,23 +12,23 @@
                     {{ csrf_field() }}
                     <div class="col-md-4 form-group">
                         {{ Form::label('category'),array('class' =>  'form-group' )}}
-                        {{ Form::textarea("category"),array('class' => 'form-control') }}
+                        {{ Form::input('category', 'category', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-4 form-group">
                         {{ Form::label('title'),array('class' =>  'form-group' )}}
-                        {{ Form::textarea("title"),array('class' => 'form-control') }}
+                        {{ Form::input('title', 'title', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-4 form-group">
                         {{ Form::label('text'),array('class' =>  'form-group' )}}
-                        {{ Form::textarea("text"),array('class' => 'form-control') }}
+                        {{ Form::input('text', 'text', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-4 form-group">
                         {{ Form::label('difficulty'),array('class' =>  'form-group' )}}
-                        {{ Form::textarea("difficulty"),array('class' => 'form-control') }}
+                        {{ Form::input('difficulty', 'difficulty', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-4 form-group">
                         {{ Form::label('answerd'),array('class' =>  'form-group' )}}
-                        {{ Form::textarea("answerd"),array('class' => 'form-control') }}
+                        {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control']) }}
                     </div>
                     <div class="col-md-10 form-group">
                         {{ Form::label('active'),array('class' =>  'form-group' )}}

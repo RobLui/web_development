@@ -20,10 +20,10 @@
                         <h2>Vorige deelnemers</h2>
                         <p>{{ $competition->previous_participants }}</p>
                     </div>
-                    <div class="col-md-4">
-                        <a class="btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
-                    </div>
                 </div>
+            </div>
+            <div class="col-md-12">
+                <a class="col-md-2 col-md-offset-5 btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
             </div>
         </div>
         @else

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+    @include("common.messages")
+    @include("common.errors")
     <div class="container">
         <div class="flex-center position-ref full-height">
             <div class="content homepage">

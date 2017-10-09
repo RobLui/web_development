@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Participant;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -65,5 +67,21 @@ class QuestionController extends Controller
         return view('Competition.questions.edit')
             ->withQuestion($question)
             ;
+    }
+
+    public function store(Request $req){
+
+        $participant = DB::table("participants")->where("ipadress",$req->ip())->get();
+//        dump($participant); die;
+
+        if ($participant){
+//        dump($participant[0]); die;
+
+            if ((bool)($participant[0]->has_permission)){
+                Session::flash('success',($participant[0]->firstname . ' heeft toestemming & is geregistreerd'));
+                return view('welcome');
+            }
+
+        }
     }
 }

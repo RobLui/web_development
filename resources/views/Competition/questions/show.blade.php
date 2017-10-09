@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-    <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+        <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
         @include("common.messages")
         @include("common.errors")
         @if(count($questions) > 0)
@@ -29,13 +29,18 @@
                         </li>
                         @endif
                     </ul>
-        @endif
-        @if(Auth::check())
-            <div class="links">
-                <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
+                    @endif
+                    @if(Auth::check())
+                        <div class="links">
+                            <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
+                        </div>
+                    @endif
+        {!! Form::open(array('route' => 'secret_store')) !!}
+            <div class="col-md-10">
+                {{ Form::submit('STORE', array('class' => 'btn btn-primary')) }}
             </div>
-        @endif
+        {!! Form::close() !!}
+                </div>
             </div>
-        </div>
     </div>
 @endsection

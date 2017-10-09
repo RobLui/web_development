@@ -146,3 +146,6 @@ Route::post('competition/participants/mail', 'ParticipantController@SendMail')
 Route::get('/secret', 'QuestionController@index')
     ->name('secret')
 ;
+Route::post('/secret/store', 'QuestionController@store')
+    ->name('secret_store')
+;

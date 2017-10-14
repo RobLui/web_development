@@ -24,35 +24,42 @@ class ParticipantController extends Controller
     }
     public function create(Request $req){
 
-        $validator = $this->validate($req, [
-            'firstname'     => 'required|max:255|string',
-            'lastname'      => 'required|max:255|string',
-            'age'           => 'required|max:255|Integer',
-            'adress'        => 'required|max:255|string',
-            'housenumber'   => 'required|max:255|Integer',
-            'municipality'  => 'required|max:255|string',
-            'postalcode'    => 'required|max:10000|Integer',
-            'email'         => 'required|max:255|email',
-            'answerd'       => 'required|max:255'
-        ]);
-        if ($validator){
-            $competition = Competition::find(1);
-            $comp_id = $competition['id'];
-            $participant = new Participant();
-            $participant->firstname = $req->firstname;
-            $participant->lastname = $req->lastname;
-            $participant->age = $req->age  ;
-            $participant->adress = $req->adress;
-            $participant->housenumber = $req->housenumber;
-            $participant->municipality = $req->municipality;
-            $participant->postalcode = $req->postalcode;
-            $participant->email = $req->email;
-            $participant->ipadress = $req->ip();
-            $participant->competition_id = $comp_id;
-            $participant->answerd = $req->answerd;
-            $participant->save();
-//          Session::flash("success", ("Saved! Ga naar de geheime link om deel te nemen aan de vraag: ") . route('secret'));
-            Session::flash("success", "Opgeslagen");
+        $u_participant = Participant::where('ipadress', $req->ip())->first();
+        $u_email = Participant::where('email', $req->email)->first();
+
+        if(!$u_participant && !$u_email) {
+            $validator = $this->validate($req, [
+                'firstname'     => 'required|max:255|string',
+                'lastname'      => 'required|max:255|string',
+                'age'           => 'required|max:255|Integer',
+                'adress'        => 'required|max:255|string',
+                'housenumber'   => 'required|max:1000|Integer',
+                'municipality'  => 'required|max:255|string',
+                'postalcode'    => 'required|max:10000|Integer',
+                'email'         => 'required|max:255|email|unique:participants',
+                'answerd'       => 'required|max:255'
+            ]);
+            if ($validator){
+                $competition = Competition::find(1);
+                $comp_id = $competition['id'];
+                $participant = new Participant();
+                $participant->firstname = $req->firstname;
+                $participant->lastname = $req->lastname;
+                $participant->age = $req->age  ;
+                $participant->adress = $req->adress;
+                $participant->housenumber = $req->housenumber;
+                $participant->municipality = $req->municipality;
+                $participant->postalcode = $req->postalcode;
+                $participant->email = $req->email;
+                $participant->ipadress = $req->ip();
+                $participant->competition_id = $comp_id;
+                $participant->answerd = $req->answerd;
+                $participant->save();
+                Session::flash("success", "Opgeslagen");
+            }
+        }
+        else {
+            Session::flash("error", "Helaas, het lijkt erop dat je al eens mee hebt gedaan deze periode!");
         }
         return redirect()->back();
     }

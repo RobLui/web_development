@@ -73,15 +73,17 @@ class QuestionController extends Controller
 
         $participant = DB::table("participants")->where("ipadress",$req->ip())->get();
 //        dump($participant); die;
-
         if ($participant){
-//        dump($participant[0]); die;
-
-            if ((bool)($participant[0]->has_permission)){
-                Session::flash('success',($participant[0]->firstname . ' heeft toestemming & is geregistreerd'));
-                return view('welcome');
+        $parti = Participant::find()->where("ipadress",$req->ip())->get("answerd");
+        dump($parti); die;
+            for ($i=0; $i < count($participant); $i++){
+                if ((bool)($participant[$i]->has_permission)){
+                    $parti->answerd = $req->answerd;
+                    $parti->save();
+                    Session::flash('success',($participant[$i]->firstname . ' heeft toestemming & is geregistreerd'));
+                }
             }
-
+                return view('welcome');
         }
     }
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\EmailManager;
 use App\Participant;
+use function auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
@@ -33,7 +35,8 @@ class ParticipantController extends Controller
             'housenumber'   => 'required|max:255|Integer',
             'municipality'  => 'required|max:255|string',
             'postalcode'    => 'required|max:10000|Integer',
-            'email'         => 'required|max:255|email'
+            'email'         => 'required|max:255|email',
+            'answerd'       => 'required|max:255'
         ]);
         if ($validator){
             $competition = Competition::find(1);
@@ -49,8 +52,10 @@ class ParticipantController extends Controller
             $participant->email = $req->email;
             $participant->ipadress = $req->ip();
             $participant->competition_id = $comp_id;
+            $participant->answerd = $req->answerd;
             $participant->save();
-            Session::flash("success", ("Saved! Ga naar de geheome link om deel te nemen aan de vraag: ") . route('secret'));
+//          Session::flash("success", ("Saved! Ga naar de geheime link om deel te nemen aan de vraag: ") . route('secret'));
+            Session::flash("success", "Opgeslagen");
         }
         return redirect()->back();
     }
@@ -107,13 +112,14 @@ class ParticipantController extends Controller
     }
 
     public function SendMail(){
-        //send('view')
-        Mail::send('welcome', [], function ($message){
-            $emailmanagers = EmailManager::all();
-            foreach ($emailmanagers as $m)
-            {
-                $message->to($m->email)->subject('Participants list');
-            }
+        $participants = Participant::all();
+        Mail::send('participants.participants',
+            ['parts' => $participants] , function ($message){
+        $emailmanagers = EmailManager::all();
+        foreach ($emailmanagers as $m)
+        {
+            $message->to($m->email)->subject('Participants list');
+        }
         });
         Session::flash("success", ("Mail verstuurd!"));
         return redirect()->back();

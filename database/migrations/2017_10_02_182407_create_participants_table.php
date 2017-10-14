@@ -25,6 +25,7 @@ class CreateParticipantsTable extends Migration
             $table->string('email', 100)->unique();
             $table->string('ipadress', 45);
             $table->boolean('has_permission')->default(true);
+            $table->string("answerd");
             $table->timestamps();
         });
     }

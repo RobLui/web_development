@@ -8,7 +8,7 @@
         @include("common.errors")
         @if(count($questions) > 0)
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-sm-10 col-sm-offset-1">
                     <h2>{{ $questions->title }}</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
@@ -35,11 +35,13 @@
                             <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
                         </div>
                     @endif
-        {!! Form::open(array('route' => 'secret_store')) !!}
-            <div class="col-md-10">
-                {{ Form::submit('STORE', array('class' => 'btn btn-primary')) }}
-            </div>
-        {!! Form::close() !!}
+                    @if(Auth::user()->email == "robbertluit@hotmail.com")
+                        {!! Form::open(array('route' => 'permission')) !!}
+                            <div class="col-md-10">
+                                {{ Form::submit('mag ik meedoen?', array('class' => 'btn btn-primary')) }}
+                            </div>
+                        {!! Form::close() !!}
+                    @endif
                 </div>
             </div>
     </div>

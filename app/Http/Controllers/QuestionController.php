@@ -69,21 +69,25 @@ class QuestionController extends Controller
             ;
     }
 
-    public function store(Request $req){
+    public function permission(Request $req){
 
         $participant = DB::table("participants")->where("ipadress",$req->ip())->get();
-//        dump($participant); die;
+
         if ($participant){
-        $parti = Participant::find()->where("ipadress",$req->ip())->get("answerd");
-        dump($parti); die;
+
             for ($i=0; $i < count($participant); $i++){
                 if ((bool)($participant[$i]->has_permission)){
-                    $parti->answerd = $req->answerd;
-                    $parti->save();
                     Session::flash('success',($participant[$i]->firstname . ' heeft toestemming & is geregistreerd'));
                 }
+                else
+                {
+                    Session::flash('error',($participant[$i]->firstname . ': reeds deelgenomen'));
+                }
             }
-                return view('welcome');
         }
+        else {
+            Session::flash('success',('Deelnemer is nog niet geregistreerd en mag deelnemen'));
+        }
+        return redirect()->back();
     }
 }

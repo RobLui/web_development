@@ -148,3 +148,11 @@ img{
 .push{
     margin-bottom:2em;
 }
+
+@media (max-width:768px) {
+    html,body {
+        background: white;
+        background-size: 200%;
+        background-repeat:no-repeat;
+    }
+}

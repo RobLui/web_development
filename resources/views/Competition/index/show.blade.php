@@ -6,26 +6,34 @@
             <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
             @include("common.messages")
             @include("common.errors")
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <div class="content">
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <h2>Uitleg</h2>
                         <p>{{ $competition->explanation }}</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <h2>Prijzen</h2>
                         <p>{{ $competition->prizes }}</p>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <h2>Vorige deelnemers</h2>
                         <p>{{ $competition->previous_participants }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <a class="col-md-2 col-md-offset-5 btn btn-primary" href="{{ route('registration') }}">Ok, next!</a>
+            <div class="col-sm-12 text-center">
+                <div class="col-sm-2 col-sm-offset-5">
+                    <a class="btn btn-primary btn-sm" href="{{ route('registration') }}">Ok, next!</a>
+                </div>
             </div>
         </div>
+        @if(Auth::check())
+            <div class="col-sm-12 text-center">
+                    <a class="btn btn-primary btn-sm" href="{{ route('edit_competition',$competition->id) }}">Wedstrijd aanpassen</a>
+                </div>
+            </div>
+        @endif
         @else
             @if(Auth::check())
                 <div class="col-sm-12">

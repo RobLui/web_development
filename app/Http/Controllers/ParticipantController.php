@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\EmailManager;
 use App\Participant;
-use function auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use const null;
 use function redirect;
-use function route;
 use function view;
 
 class ParticipantController extends Controller
@@ -113,15 +110,16 @@ class ParticipantController extends Controller
 
     public function SendMail(){
         $participants = Participant::all();
-        Mail::send('participants.participants',
-            ['parts' => $participants] , function ($message){
-        $emailmanagers = EmailManager::all();
-        foreach ($emailmanagers as $m)
-        {
-            $message->to($m->email)->subject('Participants list');
-        }
-        });
-        Session::flash("success", ("Mail verstuurd!"));
-        return redirect()->back();
+        Mail::send('participants.participants', ['parts' => $participants] , function ($message){
+
+            $emailmanagers = EmailManager::all();
+
+            foreach ($emailmanagers as $m)
+            {
+                $message->to($m->email)->subject('Participants list');
+            }
+            });
+            Session::flash("success", ("Mail naar managers verstuurd!"));
+            return redirect()->back();
     }
 }

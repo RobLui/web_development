@@ -5,23 +5,23 @@
         @include("common.messages")
         @include("common.errors")
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-sm-10 col-sm-offset-1">
                 <h2>Wedstrijd pagina</h2>
                 {!! Form::open(array('route' => 'create_competition','class' => 'form-horizontal')) !!}
                     {{ csrf_field() }}
-                    <div class="col-md-4">
+                    <div class="form-group">
                         {{ Form::label('explanation'),array('class' =>  'form-control' )}}
                         {{ Form::textarea("explanation"),array('class' => 'form-control') }}
                     </div>
-                    <div class="col-md-4">
+                    <div class="form-group">
                         {{ Form::label('prizes'),array('class' => 'form-group') }}
                         {{ Form::textarea("prizes"),array('class' => 'form-control') }}
                     </div>
-                    <div class="col-md-4">
+                    <div class="form-group">
                         {{ Form::label('previous_participants'),array('class' => 'form-group') }}
                         {{ Form::textarea("previous_participants"),array('class' => 'form-control') }}
                     </div>
-                    <div class="col-md-4">
+                    <div class="form-group">
                         {{ Form::submit('Toevoegen', array('class' => 'btn btn-primary')) }}
                     </div>
                 {!! Form::close() !!}

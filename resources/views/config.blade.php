@@ -10,7 +10,7 @@
                 <h2>Excel ontvangers</h2>
 
 {{--START INSERT MANAGER --}}
-                <div class="col-md-6">
+                <div class="col-sm-6">
                 {!! Form::open(array('route' => 'create_email_manager', 'class' => 'form-horizontal')) !!}
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -35,7 +35,7 @@
 {{--END INSERT MANAGER --}}
 
 {{--START MANAGERS --}}
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     @if(count($mm) > 0)
                         @foreach($mm as $manager)
                         <ul class="list-group">
@@ -52,7 +52,7 @@
 {{-- START INSERT PERIODES --}}
             <div class="col-sm-6">
                 <h2>Periodes</h2>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                 {!! Form::open(array('route' => 'create_period', 'class' => 'form-horizontal'))  !!}
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -82,7 +82,7 @@
 {{-- END INSERT PERIODES --}}
 
 {{--START PERIODES--}}
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     @if(count($periods) > 0)
                         @foreach($periods as $p)
                             <ul class="list-group">

@@ -44,7 +44,7 @@ class CompetitionController extends Controller
             $comp->previous_participants = $req->previous_participants;
             $comp->save();
         }
-        return view('Competition.index.show')
+        return view('Competition.index.edit')
             ->withCompetition($comp)
             ;
     }

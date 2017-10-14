@@ -19,7 +19,7 @@ class CreateRegistrationTable extends Migration
             $table->string('lastname');
             $table->integer('age');
             $table->string('adress');
-            $table->tinyInteger('housenumber');
+            $table->Integer('housenumber');
             $table->string('municipality');
             $table->integer('postalcode');
             $table->string('email', 100)->unique();

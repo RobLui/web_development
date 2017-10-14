@@ -12,17 +12,19 @@ use Maatwebsite\Excel\Facades\Excel;
 use const null;
 use function redirect;
 use function view;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ParticipantController extends Controller
 {
-    public function index()
-    {
+
+    public function index() {
         $parts = Participant::all();
         return view('participants.participants')
             ->withParts($parts)
             ;
     }
-    public function create(Request $req){
+
+    public function create(Request $req) {
 
         $u_participant = Participant::where('ipadress', $req->ip())->first();
         $u_email = Participant::where('email', $req->email)->first();
@@ -64,7 +66,7 @@ class ParticipantController extends Controller
         return redirect()->back();
     }
 
-    public function edit(Request $req,$id){
+    public function edit(Request $req,$id) {
 
         $participant = Participant::findOrFail($id);
         if ($req->isMethod("POST"))
@@ -104,7 +106,8 @@ class ParticipantController extends Controller
         }
 
     }
-    public function DownloadExcel(){
+
+    public function DownloadExcel() {
         Excel::create('participants', function($excel)
         {
             $excel->sheet('Participants', function($list) {
@@ -115,7 +118,7 @@ class ParticipantController extends Controller
             ->download('xls');
     }
 
-    public function SendMail(){
+    public function SendMail() {
         $participants = Participant::all();
         Mail::send('participants.participants', ['parts' => $participants] , function ($message){
 
@@ -128,5 +131,14 @@ class ParticipantController extends Controller
             });
             Session::flash("success", ("Mail naar managers verstuurd!"));
             return redirect()->back();
+    }
+
+    public function delete(Request $req, $id) {
+
+        $participant = Participant::findOrFail($id);
+        $participant->delete($id);
+        Session::flash("success", "Deelnemer was succesfully deleted");
+
+        return redirect()->back();
     }
 }

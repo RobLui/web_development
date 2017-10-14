@@ -22,6 +22,7 @@ class CreateQuestionsTable extends Migration
             $table->string('answerd');
             $table->string('active')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

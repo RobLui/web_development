@@ -19,6 +19,8 @@ class CreateCompetitionTable extends Migration
             $table->string('prizes');
             $table->string('previous_participants');
             $table->timestamps();
+
+
         });
     }
 

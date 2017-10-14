@@ -18,6 +18,7 @@ class CreatePeriodsTable extends Migration
             $table->date("startDate");
             $table->date("endDate");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

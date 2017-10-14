@@ -27,6 +27,8 @@ class CreateParticipantsTable extends Migration
             $table->boolean('has_permission')->default(true);
             $table->string("answerd");
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

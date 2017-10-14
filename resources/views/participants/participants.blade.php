@@ -8,8 +8,7 @@
             {{--TEMPORARY--}}
             <div class="col-md-12">
                 <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
-                @if(auth::user()->email == "robbertluit@hotmail.com")
-
+                @if(Auth::check())
                     {!! Form::open(array('route' => 'create_excel')) !!}
                         {{ Form::submit('Download Excel', array('class' => 'btn btn-primary pull-right')) }}
                     {!! Form::close() !!}
@@ -36,9 +35,9 @@
                                         Nee
                                     @endif
                                 </li>
-                            @if(Auth::check())
+                                @if(Auth::check())
                                     <li class="list-group-item">
-                                        <a class="btn btn-primary" href="{{ route('edit_participants', $part->id) }}">edit</a>
+                                        <a class="btn btn-primary" href="{{ route('edit_participants', $part->id) }}">aanpassen</a>
                                     </li>
                                 @endif
                             </ul>

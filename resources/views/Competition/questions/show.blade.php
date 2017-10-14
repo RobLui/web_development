@@ -6,43 +6,39 @@
         <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
         @include("common.messages")
         @include("common.errors")
-        @if(count($questions) > 0)
-            <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                    <h2>{{ $questions->title }}</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            {{ $questions->category }}
-                        </li>
-                        <li class="list-group-item">
-                            {{ $questions->title }}
-                        </li>
-                        <li class="list-group-item">
-                            {{ $questions->text }}
-                        </li>
-                        <li class="list-group-item">
-                            {{ $questions->difficulty }}
-                        </li>
-                        @if(Auth::check())
-                        <li class="list-group-item">
-                           <a href="{{ route('edit_questions',$questions->id) }}" class="btn btn-primary">edit</a>
-                        </li>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="col-sm-12">
+                    @if(count($questions) > 0)
+
+                        <h2 class="col-sm-12">{{ $questions->title }}</h2>
+                        <p class="col-sm-12">{{ $questions->text }}</p>
+
+                        {{--TOESTEMMING--}}
+                        @if(Auth::guest())
+                            <div class="col-sm-4">
+                                {!! Form::open(array('route' => 'permission')) !!}
+                                    {{ Form::submit('mag ik meedoen?', array('class' => 'btn btn-primary btn-sm')) }}
+                                {!! Form::close() !!}
+                            </div>
                         @endif
-                    </ul>
-                    @endif
-                    @if(Auth::check())
-                        <div class="links">
-                            <a href="{{ route('create_questions') }}">Vraag aanmaken</a>
+
+                        {{--AANPASSEN--}}
+                        @if(Auth::check())
+                            <div class="col-sm-4">
+                                <a href="{{ route('edit_questions',$questions->id) }}" class="btn btn-primary btn-sm">vraag aanpassen</a>
+                            </div>
+                        @endif
+                    @else
+
+                        {{--AANMAKEN--}}
+                        <div class="col-sm-4">
+                            <a class="btn btn-primary btn-sm" href="{{ route('create_questions') }}">Vraag aanmaken</a>
                         </div>
                     @endif
-                    @if(Auth::user()->email == "robbertluit@hotmail.com")
-                        {!! Form::open(array('route' => 'permission')) !!}
-                            <div class="col-md-10">
-                                {{ Form::submit('mag ik meedoen?', array('class' => 'btn btn-primary')) }}
-                            </div>
-                        {!! Form::close() !!}
-                    @endif
                 </div>
+
             </div>
+        </div>
     </div>
 @endsection

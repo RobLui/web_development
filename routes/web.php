@@ -91,27 +91,27 @@ Auth::routes();
 
 // -----------CONFIG-----------
 // ----------------------------
-    Route::get('/config', 'ConfigController@index')
+    Route::get('/instellingen', 'ConfigController@index')
         ->name('config')
         ->middleware('auth');
     ;
-    Route::get('/config/emailmanager/show', 'ConfigController@show')
+    Route::get('/instellingen/emailmanager/show', 'ConfigController@show')
         ->name('show_email_manager')
         ->middleware('auth')
     ;
-    Route::get('/config/emailmanager/create', 'ConfigController@create')
+    Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
         ->name('create_email_manager')
         ->middleware('auth')
     ;
-    Route::post('/config/emailmanager/create', 'ConfigController@create')
+    Route::post('/instellingen/emailmanager/create', 'ConfigController@create')
         ->name('create_email_manager')
         ->middleware('auth')
     ;
-    Route::get('/config/emailmanager/edit', 'ConfigController@edit')
+    Route::get('/instellingen/emailmanager/edit', 'ConfigController@edit')
         ->name('edit_email_manager')
         ->middleware('auth')
     ;
-    Route::post('/config/emailmanager/edit', 'ConfigController@edit')
+    Route::post('/instellingen/emailmanager/edit', 'ConfigController@edit')
         ->name('edit_email_manager')
         ->middleware('auth')
     ;

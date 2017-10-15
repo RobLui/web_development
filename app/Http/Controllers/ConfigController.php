@@ -16,7 +16,7 @@ class ConfigController extends Controller
         $comps = Competition::all();
         $periods = Period::all();
 
-        return view("config")
+        return view("instellingen")
             ->withMm($mm)
             ->withComps($comps)
             ->withPeriods($periods)
@@ -28,7 +28,7 @@ class ConfigController extends Controller
         $comps = Competition::all();
         $periods = Period::all();
 
-        return view("config")
+        return view("instellingen")
             ->withMm($mm)
             ->withComps($comps)
             ->withPeriods($periods)
@@ -64,7 +64,7 @@ class ConfigController extends Controller
     {
         $mm = EmailManager::all();
 
-        return view("config")
+        return view("instellingen")
             ->withMm($mm)
             ;
     }

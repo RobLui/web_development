@@ -37,7 +37,8 @@
                                 </li>
                                 @if(Auth::check())
                                     <li class="list-group-item">
-                                        <a class="btn btn-primary" href="{{ route('edit_participants', $part->id) }}">aanpassen</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('edit_participants', $part->id) }}">aanpassen</a>
+                                        <a class="btn btn-danger btn-sm" href="{{ route('delete_participant', $part->id) }}">delete</a>
                                     </li>
                                 @endif
                             </ul>

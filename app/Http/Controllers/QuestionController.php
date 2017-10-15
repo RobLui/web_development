@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Validator;
 
 class QuestionController extends Controller
 {
-    public function index(){
+    public function index() {
         $questions = Question::where('active', 1)->first();
         return view('Competition.questions.show')->withQuestions($questions);
     }
 
-    public function create(Request $req){
+    public function create(Request $req) {
         if ($req->isMethod("POST"))
         {
             $validator = $this->validate($req, [
@@ -42,7 +42,7 @@ class QuestionController extends Controller
         return view('Competition.questions.create');
     }
 
-    public function edit(Request $req,$id){
+    public function edit(Request $req,$id) {
         $question = Question::findOrFail($id);
         if ($req->isMethod("POST"))
         {
@@ -69,7 +69,7 @@ class QuestionController extends Controller
             ;
     }
 
-    public function permission(Request $req){
+    public function permission(Request $req) {
 
         $participant = DB::table("participants")->where("ipadress",$req->ip())->get();
 

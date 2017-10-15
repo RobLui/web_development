@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ParticipantController extends Controller
 {
+    use SoftDeletes;
 
     public function index() {
         $parts = Participant::all();
@@ -135,10 +136,13 @@ class ParticipantController extends Controller
 
     public function delete(Request $req, $id) {
 
-        $participant = Participant::findOrFail($id);
-        $participant->delete($id);
-        Session::flash("success", "Deelnemer was succesfully deleted");
-
+        if ($req->isMethod("GET"))
+        {
+            $participant = Participant::findOrFail($id);
+//            dump($participant); die;
+            $participant->delete($id);
+            Session::flash("success", "Deelnemer was succesfully deleted");
+        }
         return redirect()->back();
     }
 }

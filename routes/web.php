@@ -16,65 +16,65 @@ Auth::routes();
 // --------COMPETITION--------
 // ---------------------------
     Route::get('competition', 'CompetitionController@index')
-    ->name('show_competition')
+        ->name('show_competition')
     ;
     //NEW
     Route::get('competition/create', 'CompetitionController@create')
-    ->name('create_competition')
-    ->middleware('auth')
+        ->name('create_competition')
+        ->middleware('auth')
     ;
     Route::post('competition/create', 'CompetitionController@create')
-    ->name('create_competition')
-    ->middleware('auth')
+        ->name('create_competition')
+        ->middleware('auth')
     ;
     //EDIT
     Route::get('competition/edit', 'CompetitionController@edit')
-    ->name('edit_competition')
-    ->middleware('auth')
+        ->name('edit_competition')
+        ->middleware('auth')
     ;
     Route::post('competition/edit', 'CompetitionController@edit')
-    ->name('edit_competition')
-    ->middleware('auth')
+        ->name('edit_competition')
+        ->middleware('auth')
     ;
 
 // --------QUESTIONS--------
 // -------------------------
     Route::get('competition/questions', 'QuestionController@index')
-    ->name('show_questions')
+        ->name('show_questions')
     ;
     Route::get('competition/questions/create', 'QuestionController@create')
-    ->name('create_questions')
-    ->middleware('auth')
+        ->name('create_questions')
+        ->middleware('auth')
     ;
     Route::post('competition/questions/create', 'QuestionController@create')
-    ->name('create_questions')
-    ->middleware('auth')
+        ->name('create_questions')
+        ->middleware('auth')
     ;
     Route::get('competition/questions/edit/{id}', 'QuestionController@edit')
-    ->name('edit_questions')
-    ->middleware('auth')
+        ->name('edit_questions')
+        ->middleware('auth')
     ;
     Route::post('competition/questions/edit/{id}', 'QuestionController@edit')
-    ->name('edit_questions')
-    ->middleware('auth')
+        ->name('edit_questions')
+        ->middleware('auth')
     ;
 
 
 // --------REGISTRATIONS-------
 // ----------------------------
     Route::get('competition/registration', 'RegistrationController@index')
-    ->name('registration')
+        ->name('registration')
     ;
 
 
 // --------PARTICIPANTS--------
 // ----------------------------
     Route::get('competition/participants', 'ParticipantController@index')
-    ->name('show_participants')
-    ->middleware('auth')
+        ->name('show_participants')
+        ->middleware('auth')
     ;
     Route::post('competition/participants', 'ParticipantController@create')
-    ->name('create_participants')
+        ->name('create_participants')
     ;
     Route::get('competition/participants/edit/{id}', 'ParticipantController@edit')
         ->name('edit_participants')
@@ -82,6 +82,10 @@ Auth::routes();
     ;
     Route::post('competition/participants/edit/{id}', 'ParticipantController@edit')
         ->name('edit_participants')
+        ->middleware('auth');
+    ;
+    Route::get('competition/participants/delete/{id}', 'ParticipantController@delete')
+        ->name('delete_participant')
         ->middleware('auth');
     ;
 
@@ -114,38 +118,35 @@ Auth::routes();
 
 // -----------PERIODES---------
 // ----------------------------
-Route::post('/periods/create', 'PeriodController@create')
-    ->name('create_period')
-    ->middleware('auth');
-;
-Route::post('/periods/edit/{id}', 'PeriodController@edit')
-    ->name('edit_period')
-    ->middleware('auth');
-;
-Route::get('/periods/edit/{id}', 'PeriodController@edit')
-    ->name('edit_period')
-    ->middleware('auth');
-;
+    Route::post('/periods/create', 'PeriodController@create')
+        ->name('create_period')
+        ->middleware('auth');
+    ;
+    Route::post('/periods/edit/{id}', 'PeriodController@edit')
+        ->name('edit_period')
+        ->middleware('auth');
+    ;
+    Route::get('/periods/edit/{id}', 'PeriodController@edit')
+        ->name('edit_period')
+        ->middleware('auth');
+    ;
 
 // --------EXCEL------------
 // -------------------------
-Route::post('competition/participants/excel', 'ParticipantController@DownloadExcel')
-    ->name('create_excel')
-    ->middleware('auth');
-;
+    Route::post('competition/participants/excel', 'ParticipantController@DownloadExcel')
+        ->name('create_excel')
+        ->middleware('auth');
+    ;
 
 // --------SEND MAIL---------
 // --------------------------
-Route::post('competition/participants/mail', 'ParticipantController@SendMail')
-    ->name('send_mail')
-    ->middleware('auth');
-;
+    Route::post('competition/participants/mail', 'ParticipantController@SendMail')
+        ->name('send_mail')
+        ->middleware('auth');
+    ;
 
-// --------SECRET-----------
+// --------PERMISSION-----------
 // -------------------------
-Route::get('/secret', 'QuestionController@index')
-    ->name('secret')
-;
-Route::post('/checkpermission', 'QuestionController@permission')
-    ->name('permission')
-;
+    Route::post('/checkpermission', 'QuestionController@permission')
+        ->name('permission')
+    ;

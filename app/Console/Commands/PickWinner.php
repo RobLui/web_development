@@ -7,6 +7,7 @@ use App\Participant;
 use App\Period;
 use App\Question;
 use Illuminate\Console\Command;
+use Carbon\Carbon;
 
 class PickWinner extends Command
 {
@@ -41,16 +42,28 @@ class PickWinner extends Command
      */
     public function handle()
     {
-        // Haalt random 1 deelnemer met het antwoord op actieve vraag op
+
+        $date = Carbon::now();
+
+        // Haalt random 1 deelnemer met het juiste antwoord op de actieve vraag op
         $question = Question::where('active', 1)->first();
         $winner = Participant::where('answerd', $question->answerd)
             ->where('has_permission',true)
             ->orderByRaw("RAND()")
             ->take(1)
             ->get()
+            ->first()
         ;
-        $period = Period::
-        $this->info($winner);
+        // Check op actieve periode
+        $period = Period::where('endDate', '>', $date)->get()->first();
+
+        // Voeg een winnaar toe aan die periode op basis van degene die een juist antwoord heeft gegeven
+        $period['winner'] = $winner['id'];
+        $period['winner_name'] = $winner['firstname'];
+        $period['winner_email'] = $winner['email'];
+        $period->save();
+
+        $this->info($period);
     }
 
 }

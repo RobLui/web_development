@@ -15,6 +15,8 @@ class UpdateAddWinnerPeriodTable extends Migration
     {
         Schema::table('periods', function (Blueprint $table) {
             $table->integer("winner")->nullable();
+            $table->string("winner_name")->nullable();
+            $table->string("winner_email")->nullable();
         });
     }
 

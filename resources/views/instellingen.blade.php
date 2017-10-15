@@ -99,7 +99,10 @@
                                     Prijs: {{  $p->prize}}
                                 </li>
                                 <li class="list-group-item">
-                                    Winnaar: {{  $p->winner}}
+                                    Naam winnaar: {{  $p->winner_name}}
+                                </li>
+                                <li class="list-group-item">
+                                    Email winnaar: {{  $p->winner_email}}
                                 </li>
                                 <li class="list-group-item">
                                     <a class="btn btn-primary" href="{{ route('edit_period', $p->id) }}">edit</a>

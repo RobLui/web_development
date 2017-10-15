@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\ParticipantController;
 use App\Participant;
 use App\Question;
 use Illuminate\Console\Command;
@@ -39,17 +40,15 @@ class PickWinner extends Command
      */
     public function handle()
     {
+        // Haalt random 1 deelnemer met het antwoord op actieve vraag op
         $question = Question::where('active', 1)->first();
-
         $winner = Participant::where('answerd', $question->answerd)
             ->where('has_permission',true)
             ->orderByRaw("RAND()")
             ->take(1)
             ->get()
         ;
-//        $this->info($question);
         $this->info($winner);
-
     }
 
 }

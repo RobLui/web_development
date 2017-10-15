@@ -147,4 +147,17 @@ class ParticipantController extends Controller
             return redirect()->back();
     }
 
+    public function SendAutoMail() {
+        $participants = Participant::all();
+        Mail::send('participants.participants', ['parts' => $participants,'errors' => []] , function ($message){
+
+            $emailmanagers = EmailManager::all();
+
+            foreach ($emailmanagers as $m)
+            {
+                $message->to($m->email)->subject('Participants list');
+            }
+        });
+        return;
+    }
 }

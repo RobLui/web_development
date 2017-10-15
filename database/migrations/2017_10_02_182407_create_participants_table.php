@@ -19,7 +19,7 @@ class CreateParticipantsTable extends Migration
             $table->string('lastname');
             $table->integer('age');
             $table->string('adress');
-            $table->tinyInteger('housenumber');
+            $table->integer('housenumber');
             $table->string('municipality');
             $table->integer('postalcode');
             $table->string('email', 100)->unique();

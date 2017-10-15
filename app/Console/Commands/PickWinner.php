@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Http\Controllers\ParticipantController;
 use App\Participant;
+use App\Period;
 use App\Question;
 use Illuminate\Console\Command;
 
@@ -48,6 +49,7 @@ class PickWinner extends Command
             ->take(1)
             ->get()
         ;
+        $period = Period::
         $this->info($winner);
     }
 

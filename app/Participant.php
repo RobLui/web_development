@@ -15,6 +15,7 @@ class Participant extends Model
         'municipality',
         'postalcode',
         'email',
-        'has_permission'
+        'has_permission',
+        'answerd'
     ];
 }

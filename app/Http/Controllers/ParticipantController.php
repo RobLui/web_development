@@ -80,7 +80,8 @@ class ParticipantController extends Controller
                 'housenumber'   => 'required|max:255|Integer',
                 'municipality'  => 'required|max:255|string',
                 'postalcode'    => 'required|max:10000|Integer',
-                'email'         => 'required|max:255|email'
+                'email'         => 'required|max:255|email',
+                'answerd'       => 'required'
             ]);
 
             if ($validator){
@@ -94,6 +95,7 @@ class ParticipantController extends Controller
                 $participant->municipality = $req->municipality;
                 $participant->postalcode = $req->postalcode;
                 $participant->email = $req->email;
+                $participant->answerd = $req->answerd;
                 $participant->ipadress = $req->ip();
                 $participant->competition_id = $comp_id;
                 $participant->has_permission = (boolean)$req->has_permission;

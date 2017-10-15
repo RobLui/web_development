@@ -28,7 +28,7 @@
                                 <li class="list-group-item">Adres: {{$part->adress}} {{$part->housenumber}}</li>
                                 <li class="list-group-item">Gemeente: {{$part->postalcode}} {{$part->municipality}}</li>
                                 <li class="list-group-item">IP: {{ $part->ipadress }}</li>
-                                <li class="list-group-item">Mag deelnemen:
+                                <li class="list-group-item">Kan winnen:
                                     @if($part->has_permission)
                                         Ja
                                         @else

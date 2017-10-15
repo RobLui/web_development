@@ -18,7 +18,7 @@
                         @if(Auth::guest())
                             <div class="col-sm-4">
                                 {!! Form::open(array('route' => 'permission')) !!}
-                                    {{ Form::submit('mag ik meedoen?', array('class' => 'btn btn-primary btn-sm')) }}
+                                    {{ Form::submit('Maak ik kans om te winnen?', array('class' => 'btn btn-primary btn-sm')) }}
                                 {!! Form::close() !!}
                             </div>
                         @endif

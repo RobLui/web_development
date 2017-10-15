@@ -108,6 +108,17 @@ class ParticipantController extends Controller
 
     }
 
+    public function delete(Request $req, $id) {
+
+        if ($req->isMethod("GET"))
+        {
+            $participant = Participant::findOrFail($id);
+            $participant->delete($id);
+            Session::flash("success", "Deelnemer verwijderd");
+        }
+        return redirect()->back();
+    }
+
     public function DownloadExcel() {
         Excel::create('participants', function($excel)
         {
@@ -134,15 +145,4 @@ class ParticipantController extends Controller
             return redirect()->back();
     }
 
-    public function delete(Request $req, $id) {
-
-        if ($req->isMethod("GET"))
-        {
-            $participant = Participant::findOrFail($id);
-//            dump($participant); die;
-            $participant->delete($id);
-            Session::flash("success", "Deelnemer was succesfully deleted");
-        }
-        return redirect()->back();
-    }
 }

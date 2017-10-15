@@ -77,16 +77,16 @@ class QuestionController extends Controller
 
             for ($i=0; $i < count($participant); $i++){
                 if ((bool)($participant[$i]->has_permission)){
-                    Session::flash('success',($participant[$i]->firstname . ' heeft toestemming & is geregistreerd'));
+                    Session::flash('success',($participant[$i]->firstname . ' maakt kans om te winnen'));
                 }
                 else
                 {
-                    Session::flash('error',($participant[$i]->firstname . ': reeds deelgenomen'));
+                    Session::flash('error',($participant[$i]->firstname . ' maakt geen kans om te winnen'));
                 }
             }
         }
         else {
-            Session::flash('success',('Deelnemer is nog niet geregistreerd en mag deelnemen'));
+            Session::flash('success',('Registreer je eerst en maak dan kans om te winnen!'));
         }
         return redirect()->back();
     }

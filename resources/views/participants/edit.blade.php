@@ -53,8 +53,8 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                {{ Form::label('has_permission', 'Toestemming', array('class' => 'control-label pull-left' )) }}
-                                <input type="checkbox" class="form-control checkbox" name="has_permission" id="has_permission">
+                                {{ Form::label('has_permission', 'Maakt kans om te winnen', array('class' => 'control-label' )) }}
+                                {{ Form::checkbox('has_permission', 'has_permission',array('class' => 'form-control control-label')) }}
                             </div>
                         </div>
                             <div class="form-group">

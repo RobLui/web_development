@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use App\Registration;
 use Illuminate\Http\Request;
 use Session;
@@ -12,7 +13,8 @@ class RegistrationController extends Controller
 {
     public function index()
     {
-        return view('registration');
+        $question = Question::where('active', 1)->first();
+        return view('registration')->withQuestions($question);
     }
 
     public function create(Request $req){

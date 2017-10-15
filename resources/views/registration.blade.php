@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-sm-4 col-sm-offset-4">
                             <div class="form-group">
-                                {{ Form::label('answerd', 'Antwoord', array('class' => 'control-label pull-left')) }}
+                                {{ Form::label('answerd', $questions->text, array('class' => 'control-label pull-left')) }}
                                 {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control text-center']) }}
                             </div>
                         </div>

@@ -8,17 +8,22 @@
             @include("common.errors")
             <div class="col-sm-12">
                 <div class="content">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6 col-sm-offset-3">
                         <h2>Uitleg</h2>
                         <p>{{ $competition->explanation }}</p>
                     </div>
-                    <div class="col-sm-4">
-                        <h2>Prijzen</h2>
-                        <p>{{ $competition->prizes }}</p>
-                    </div>
-                    <div class="col-sm-4">
-                        <h2>Vorige deelnemers</h2>
-                        <p>{{ $competition->previous_participants }}</p>
+                    {{--<div class="col-sm-4">--}}
+                        {{--<h2>Prijzen</h2>--}}
+                        {{--<p>{{ $competition->prizes }}</p>--}}
+                    {{--</div>--}}
+                </div>
+                {{--Vorige deelnemers--}}
+                <div class="col-sm-12">
+                    <div class="content">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <h2>Vorige deelnemers</h2>
+                            <p>{{ $competition->previous_participants }}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,55 @@
 # Deployment document
 
+# Overview functionaliteiten:
+
+> NIET INGELOGD
+
+> > /
+
+> > > call to action knop & afbeelding te winnen object
+
+> > /competition
+
+> > > korte uitleg & vorige winnaars
+
+> > /competition/registration
+
+> > > gegevens & antwoord
+
+> INGELOGD (ADMIN FUNCTIONALITEIT)
+
+> > /dashboard
+
+> > > overzicht verschillende admin mogelijkheden
+
+> > /competition/edit
+
+> > > aanmaken/aanpassen wedstrijd
+
+> > /competition/questions
+
+> > > overzicht vraag + knop voor te editten
+
+> > /competition/participants
+
+> > > Overzicht alle deelnemers
+
+> > > Mogelijkheid tot mail versturen naar email managers
+
+> > > download excel file van alle deelnemers
+
+> > > diskwalificeren van deelnemer, kans ontnemen om te winnen, verwijderen deelnemer
+
+> > /instellingen
+
+> > > Email managers instellen (die deelnemerslijst ontvangen)
+
+> > > periodes aanmaken & aanpassen
+
+> > > Na dat er een winnaar is gekozen komt deze hier te zien bij de periode
+
+# Server Deployment:
+
 ## REQUIREMENTS
 
 > PHP VERSIE: 7+, check php versie met commando:

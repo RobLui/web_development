@@ -8,6 +8,9 @@ class Period extends Model
 {
     protected $fillable = [
         'startDate',
-        'endDate'
+        'endDate',
+        'winner',
+        'winner_name',
+        'winner_email'
     ];
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Competition;
+use App\Period;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use function view;
@@ -10,9 +11,13 @@ use function view;
 class CompetitionController extends Controller
 {
     public function index(){
+        $winners = Period::whereNotNull('winner')->get();
         $competition = Competition::find(1);
+
+//        dd($winners);
         return view('Competition.index.show')
             ->withCompetition($competition)
+            ->withWinners($winners)
             ;
     }
 

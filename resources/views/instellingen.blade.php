@@ -9,6 +9,7 @@
             <div class="col-sm-6">
                 <h2>Excel ontvangers</h2>
 
+
 {{--START INSERT MANAGER --}}
                 <div class="col-sm-6">
                 {!! Form::open(array('route' => 'create_email_manager', 'class' => 'form-horizontal')) !!}
@@ -42,6 +43,7 @@
                             <li class="list-group-item active">Manager ID: {{ $manager->id }}</li>
                             <li class="list-group-item">Naam: {{ $manager->name }}</li>
                             <li class="list-group-item">E-mail: {{ $manager->email }}</li>
+                            <li class="list-group-item"><a class="btn btn-primary btn-sm" href="{{ route('edit_email_manager', $manager->id ) }}">edit</a></li>
                         </ul>
                         @endforeach
                     @endif

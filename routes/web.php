@@ -95,26 +95,34 @@ Auth::routes();
         ->name('config')
         ->middleware('auth');
     ;
-    Route::get('/instellingen/emailmanager/show', 'ConfigController@show')
-        ->name('show_email_manager')
-        ->middleware('auth')
-    ;
-    Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
-        ->name('create_email_manager')
-        ->middleware('auth')
-    ;
+//    Route::get('/instellingen/emailmanager/show', 'ConfigController@show')
+//        ->name('show_email_manager')
+//        ->middleware('auth')
+//    ;
+//    Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
+//        ->name('create_email_manager')
+//        ->middleware('auth')
+//    ;
     Route::post('/instellingen/emailmanager/create', 'ConfigController@create')
         ->name('create_email_manager')
         ->middleware('auth')
     ;
-    Route::get('/instellingen/emailmanager/edit', 'ConfigController@edit')
+    Route::post('/instellingen/emailmanager/edit/{id}', 'ConfigController@editManager')
         ->name('edit_email_manager')
         ->middleware('auth')
     ;
-    Route::post('/instellingen/emailmanager/edit', 'ConfigController@edit')
+    Route::get('/instellingen/emailmanager/edit/{id}', 'ConfigController@editManager')
         ->name('edit_email_manager')
         ->middleware('auth')
     ;
+    Route::get('/instellingen/emailmanager/delete/{id}', 'ConfigController@deleteManager')
+        ->name('delete_email_manager')
+        ->middleware('auth')
+    ;
+//    Route::get('/instellingen/emailmanager/edit', 'ConfigController@edit')
+//        ->name('edit_email_manager')
+//        ->middleware('auth')
+//    ;
 
 // -----------PERIODES---------
 // ----------------------------

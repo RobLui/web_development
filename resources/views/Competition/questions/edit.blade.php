@@ -3,7 +3,7 @@
 @section('content')
     @if($question)
         <div class="container">
-            <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary">terug</a>
             @include("common.messages")
             @include("common.errors")
             <div class="row">

@@ -133,6 +133,15 @@ class ParticipantController extends Controller
     }
 
     public function SendMail() {
+
+//        $emails['attach'] = base_path().'/storage/test/test.xls';
+
+//        Mail::send('email.remindsupplier', $testData, function ($mail) use ($emails) {
+//            $mail->to($emails['to'])
+//                ->subject('Test Application')
+//                ->attach($emails['attach']);
+//        });
+//
         $participants = Participant::all();
         Mail::send('participants.participants', ['parts' => $participants] , function ($message){
 

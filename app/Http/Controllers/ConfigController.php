@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Session;
 
 class ConfigController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $mm = EmailManager::all();
         $comps = Competition::all();
         $periods = Period::all();
@@ -22,8 +21,8 @@ class ConfigController extends Controller
             ->withPeriods($periods)
             ;
     }
-    public function show()
-    {
+
+    public function show() {
         $mm = EmailManager::all();
         $comps = Competition::all();
         $periods = Period::all();
@@ -34,8 +33,8 @@ class ConfigController extends Controller
             ->withPeriods($periods)
             ;
     }
-    public function create(Request $req)
-    {
+
+    public function create(Request $req) {
 
         $mm = EmailManager::all();
         $comps = Competition::all();
@@ -60,13 +59,43 @@ class ConfigController extends Controller
         return redirect()->back();
             ;
     }
-    public function edit()
-    {
+
+    public function editManager(Request $req, $id) {
+        $mm = EmailManager::find($id);
+        $comps = Competition::all();
+
+        if ($req->isMethod("POST"))
+        {
+            $mm = EmailManager::findOrFail($id);
+            if ($mm)
+            {
+                $mm->name = $req->name;
+                $mm->email = $req->email;
+                $mm->competition_id = $req->competition_id;
+                $mm->save();
+                Session::flash('success','Manager updated');
+            }
+            return redirect()->back();
+        }
+
+        return view("mailmanagers.edit")
+            ->withMm($mm)
+            ->withComps($comps)
+            ;
+    }
+
+    public function deleteManager(Request $req, $id) {
+        $comps = Competition::all();
         $mm = EmailManager::all();
 
-        return view("instellingen")
-            ->withMm($mm)
-            ;
+        if ($req->isMethod("GET"))
+        {
+            $mailmanager = EmailManager::findOrFail($id);
+            $mailmanager->delete($id);
+            Session::flash("success", "Deelnemer verwijderd");
+        }
+
+        return $this->index();
     }
 }
 

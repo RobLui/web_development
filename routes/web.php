@@ -99,10 +99,10 @@ Auth::routes();
 //        ->name('show_email_manager')
 //        ->middleware('auth')
 //    ;
-//    Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
-//        ->name('create_email_manager')
-//        ->middleware('auth')
-//    ;
+    Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
+        ->name('create_email_manager')
+        ->middleware('auth')
+    ;
     Route::post('/instellingen/emailmanager/create', 'ConfigController@create')
         ->name('create_email_manager')
         ->middleware('auth')

@@ -22,22 +22,7 @@ class ConfigController extends Controller
             ;
     }
 
-    public function show() {
-        $mm = EmailManager::all();
-        $comps = Competition::all();
-        $periods = Period::all();
-
-        return view("instellingen")
-            ->withMm($mm)
-            ->withComps($comps)
-            ->withPeriods($periods)
-            ;
-    }
-
     public function create(Request $req) {
-
-        $mm = EmailManager::all();
-        $comps = Competition::all();
 
         if ($req->isMethod('POST'))
         {
@@ -85,8 +70,6 @@ class ConfigController extends Controller
     }
 
     public function deleteManager(Request $req, $id) {
-        $comps = Competition::all();
-        $mm = EmailManager::all();
 
         if ($req->isMethod("GET"))
         {
@@ -94,7 +77,6 @@ class ConfigController extends Controller
             $mailmanager->delete($id);
             Session::flash("success", "Deelnemer verwijderd");
         }
-
         return $this->index();
     }
 }

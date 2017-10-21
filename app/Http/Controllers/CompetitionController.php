@@ -11,10 +11,14 @@ use function view;
 class CompetitionController extends Controller
 {
     public function index(){
-        $winners = Period::whereNotNull('winner')->get();
+
+        if (Period::all()) {
+            $winners = Period::whereNotNull('winner')->get();
+            if (!$winners)
+            $winners = [];
+        }
         $competition = Competition::find(1);
 
-//        dd($winners);
         return view('Competition.index.show')
             ->withCompetition($competition)
             ->withWinners($winners)
@@ -60,6 +64,6 @@ class CompetitionController extends Controller
             $comp->save();
             $view = view('Competition.index.show');
         }
-        return $view->withCompetition($comp);;
+        return $view->withCompetition($comp);
     }
 }

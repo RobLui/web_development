@@ -1,6 +1,4 @@
-# Deployment document
-
-# Server Deployment:
+# Server Deployment - <http://research.robbertluit.be/development>
 
 ## REQUIREMENTS
 
@@ -43,6 +41,20 @@
 > Database entities updaten via migrations met commando:
 
 > > php artisan migrate
+
+# STAP 6
+
+> 1. Crëer een admin (via /register) & log daarna in
+
+> 2. Maak een wedstrijd aan in /dashboard -> wedstrijd
+
+> 3. Maak een vraag aan /dashboard -> vragen
+
+> 4. Maak 4 periodes /dashboard -> instellingen (periodes)
+
+> 5. Voeg Managers toe /dashboard -> instellingen (excel ontvangers)
+
+> 6. All done.
 
 # Overview functionaliteiten:
 

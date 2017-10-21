@@ -14,8 +14,6 @@ class CompetitionController extends Controller
 
         if (Period::all()) {
             $winners = Period::whereNotNull('winner')->get();
-            if (!$winners)
-            $winners = [];
         }
         $competition = Competition::find(1);
 

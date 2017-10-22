@@ -25,7 +25,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('pick:winner')
-                  ->weeklyOn(7,'00:00');
+                    ->weeklyOn(7,'00:00');
+
+         $schedule->command('send:participantlist')
+                    ->daily();
     }
 
     /**

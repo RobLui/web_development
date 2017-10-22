@@ -44,6 +44,11 @@
 
 # STAP 6
 
+> voeg volgende lijn toe bij crontabs (crontab -e in CMD/TERMINAL)
+= * * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&1
+
+# STAP 7 (na opzet)
+
 > 1. Crëer een admin (via /register) & log daarna in
 
 > 2. Maak een wedstrijd aan in /dashboard -> wedstrijd

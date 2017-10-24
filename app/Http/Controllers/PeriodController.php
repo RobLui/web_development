@@ -44,6 +44,7 @@ class PeriodController extends Controller
         }
         if ($req->isMethod("POST"))
         {
+            $period = Period::findOrFail($id);
 
             $validator = $this->validate($req, [
                 'startDate'         => 'required|max:255|date',
@@ -52,9 +53,6 @@ class PeriodController extends Controller
                 'prize'             => 'required|max:255',
             ]);
 
-
-
-            $period = Period::findOrFail($id);
             if ($period && $validator)
             {
                 $period->startDate = date('Y-m-d', strtotime($req->startDate));

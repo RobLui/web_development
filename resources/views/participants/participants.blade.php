@@ -6,8 +6,8 @@
         @include("common.errors")
         <div class="row">
             {{--TEMPORARY--}}
-            <div class="col-md-12">
-                <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+            <div class="col-sm-12">
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; dashboard</a>
                 @if(Auth::check())
                     {!! Form::open(array('route' => 'create_excel')) !!}
                         {{ Form::submit('Download Excel', array('class' => 'btn btn-primary pull-right')) }}
@@ -20,7 +20,7 @@
                 <h2>Deelnemers:</h2>
                 @if($parts)
                     @foreach($parts as $part )
-                        <div class="col-md-4">
+                        <div class="col-sm-4">
                             <ul class="list-group">
                                 <li class="list-group-item">Naam: {{ $part->firstname }} {{ $part->lastname }}</li>
                                 <li class="list-group-item">Leeftijd: {{$part->age}}</li>

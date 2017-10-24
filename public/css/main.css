@@ -10,7 +10,8 @@ BLAUW       #3f8ad4
 html, body {
     background: url('../images/body-background.png') no-repeat center center fixed;
     background-size: cover;
-    color: #636b6f;
+    /*color: #636b6f;*/
+    color:black;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
     height: 107vh;
@@ -51,7 +52,7 @@ a{
 }
 
 .links > a {
-    color: #636b6f;
+    /*color: #636b6f;*/
     padding: 0 25px;
     font-size: 12px;
     font-weight: 600;
@@ -142,7 +143,7 @@ img{
     color:white !important;
 }
 .content.homepage h2{
-    color:white;
+    color:white !important;
 }
 .push{
     margin-bottom:2em;
@@ -155,6 +156,14 @@ img{
         background-repeat:no-repeat;
     }
 }
-.control-label{
+
+label,option, .control-label
+{
     color:black;
+}
+
+.col-sm-6 {
+    background: white;
+    border-radius: 5px;
+    height: 100%;
 }

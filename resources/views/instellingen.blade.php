@@ -4,11 +4,11 @@
     <div class="container">
         @include("common.messages")
         @include("common.errors")
-            <div class="col-sm-12">        <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+            <div class="col-sm-12">
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; dashboard</a>
             </div>
             <div class="col-sm-6">
                 <h2>Excel ontvangers</h2>
-
 
 {{--START INSERT MANAGER --}}
                 <div class="col-sm-6">

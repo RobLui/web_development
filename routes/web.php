@@ -1,10 +1,13 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
+
+// --------WELCOME------------
+// ---------------------------
+    Route::get('/', 'HomeController@index')
+        ->name('welcome')
+    ;
 
 // --------DASHBOARD----------
 // ---------------------------

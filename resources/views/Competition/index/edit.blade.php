@@ -6,6 +6,7 @@
             @include("common.messages")
             @include("common.errors")
             {{--{{$competition->id}}--}}
+            <a href="{{ route('show_competition') }}" class="btn btn-secondary">&#8592; terug</a>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4">
                     <h2 class="text-center" >Wedstrijd aanpassen</h2>

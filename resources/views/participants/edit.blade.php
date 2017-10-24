@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+        <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; terug naar dashboard</a>
         @include("common.messages")
         @include("common.errors")
             <div class="row">

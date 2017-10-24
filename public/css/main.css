@@ -18,7 +18,7 @@ html, body {
     width:100vw;
     margin: 0;
 }
-a{
+a {
     color:white !important;
     font-weight:  bold !important;
 }
@@ -68,9 +68,10 @@ a{
 /* ----- CUSTOM CSS -----*/
 
 
-.dashboard{
+.dashboard {
     display: block;
 }
+
 .dashboard:first-child,
 .dashboard:nth-child(2) {
     margin-top:5em;
@@ -83,36 +84,39 @@ a{
     font-size:1.5em;
     margin-top:1em;
     width:auto;
-    text-align
+    text-align:center;
 }
 
 .dashboard:first-child,
 .dashboard:nth-child(2),
 .dashboard:nth-child(3),
 .dashboard:nth-child(4),
-.dashboard:nth-child(6)
-{
+.dashboard:nth-child(6) {
     display: block;
 }
 
-.dashboard:first-child{
+.dashboard:first-child {
     border:0.2em solid #4F8ACE;
     background: #4F8ACE;
 }
-.dashboard:nth-child(2){
+
+.dashboard:nth-child(2) {
     border:0.2em solid #834C88;
     background: #834C88;
 }
-.dashboard:nth-child(3){
+
+.dashboard:nth-child(3) {
     border:0.2em solid #c23b36;
     background: #c23b36;
 }
-.dashboard:nth-child(4){
+
+.dashboard:nth-child(4) {
     border:0.2em solid #EBA952;
     background: #EBA952;
 
 }
-.dashboard:nth-child(6){
+
+.dashboard:nth-child(6) {
     border:0.2em solid #8c468c;
     background: #8c468c;
 }
@@ -123,7 +127,8 @@ a{
     padding-right: 2em !important;
     padding-left: 2em !important;
 }
-.flex-center{
+
+.flex-center {
     margin-top:-5em;
 }
 
@@ -132,35 +137,31 @@ a{
     background-color: #67ba3d;
 }
 
-.dropdown-menu, #app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li{
+.dropdown-menu, #app-navbar-collapse > ul.nav.navbar-nav.navbar-right > li {
     background-color:#67ba3d;
 }
-img{
+
+img {
     max-height:7em !important;
 }
-.sess{
+
+.sess {
     padding-top:5em;
 }
-#app > div > div > div.links > a{
+
+#app > div > div > div.links > a {
     color:white !important;
 }
-.content.homepage h2{
+
+.content.homepage h2 {
     color:white !important;
 }
+
 .push{
     margin-bottom:2em;
 }
 
-@media (max-width:768px) {
-    html,body {
-        background: white;
-        background-size: 200%;
-        background-repeat:no-repeat;
-    }
-}
-
-label,option, .control-label
-{
+label,option, .control-label {
     color:black;
 }
 
@@ -168,4 +169,18 @@ label,option, .control-label
     background: white;
     border-radius: 5px;
     height: 100%;
+}
+
+.block {
+
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width:768px) {
+    html,body {
+        background: white;
+        background-size: 200%;
+        background-repeat:no-repeat;
+    }
 }

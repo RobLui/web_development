@@ -3,7 +3,7 @@
 @section('content')
     @if($competition)
         <div class="container">
-            <a href="{{ url()->previous() }}" class="btn btn-secondary">< vorige</a>
+            <a href="{{ route('welcome') }}" class="btn btn-secondary">&#8592; terug</a>
             @include("common.messages")
             @include("common.errors")
             <div class="col-sm-12">

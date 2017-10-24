@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('dashboard') }}" class="btn btn-secondary">terug</a>
+        <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; terug</a>
         @include("common.messages")
         @include("common.errors")
         <div class="row">

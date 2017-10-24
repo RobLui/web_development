@@ -7,7 +7,7 @@
             @include("common.messages")
             @include("common.errors")
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-sm-4 col-sm-offset-4">
                     <h2 class="text-center" >Vraag Aanpassen</h2>
                     {!! Form::open(array(route('edit_questions',$question->id) ,'class' => 'form-horizontal')) !!}
                         {{ csrf_field() }}

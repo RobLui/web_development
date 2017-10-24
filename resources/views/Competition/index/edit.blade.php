@@ -7,7 +7,7 @@
             @include("common.errors")
             {{--{{$competition->id}}--}}
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-sm-4 col-sm-offset-4">
                     <h2 class="text-center" >Wedstrijd aanpassen</h2>
                     {!! Form::open(array('route' => 'edit_competition','class' => 'form-horizontal')) !!}
                         {{ csrf_field() }}

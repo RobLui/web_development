@@ -61,7 +61,7 @@ a{
     text-transform: uppercase;
 }
 
-.m-b-md {
+.m-b-sm {
     margin-bottom: 30px;
 }
 
@@ -69,21 +69,23 @@ a{
 
 
 .dashboard{
-    height:20em;
-    border-radius: 1em;
+    display: block;
 }
 .dashboard:first-child,
-.dashboard:nth-child(2)
-{
+.dashboard:nth-child(2) {
     margin-top:5em;
 }
 
-.dashboard a{
+.dashboard a {
     height:100%;
-    padding-top:6em;
+    padding:5em;
     display:block;
     font-size:1.5em;
+    margin-top:1em;
+    width:auto;
+    text-align
 }
+
 .dashboard:first-child,
 .dashboard:nth-child(2),
 .dashboard:nth-child(3),

@@ -49,10 +49,13 @@
                             </div>
                         </div>
                         <div class="col-sm-4 col-sm-offset-4">
-                            <div class="form-group">
-                                {{ Form::label('answerd', $questions->text, array('class' => 'control-label pull-left')) }}
-                                {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control text-center']) }}
-                            </div>
+                            @if(count($questions) > 0 )
+                                <div class="form-group">
+                                    {{ Form::label('answerd', $questions->text, array('class' => 'control-label pull-left')) }}
+                                    {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control text-center']) }}
+                                </div>
+                            @endif
+
                         </div>
                     <div class="col-sm-12">
                         <div class="form-group">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if($competition)
+    @if(count($competition) > 0)
         <div class="container">
             @include("common.messages")
             @include("common.errors")

@@ -44,8 +44,18 @@ class PeriodController extends Controller
         }
         if ($req->isMethod("POST"))
         {
+
+            $validator = $this->validate($req, [
+                'startDate'         => 'required|max:255|date',
+                'endDate'           => 'required|max:255',
+                'competition_id'    => 'required|integer',
+                'prize'             => 'required|max:255',
+            ]);
+
+
+
             $period = Period::findOrFail($id);
-            if ($period)
+            if ($period && $validator)
             {
                 $period->startDate = date('Y-m-d', strtotime($req->startDate));
                 $period->endDate = date('Y-m-d', strtotime($req->endDate));

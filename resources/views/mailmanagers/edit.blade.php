@@ -3,7 +3,7 @@
 @section('content')
     @if($mm)
         <div class="container">
-            <a href="{{ route('config') }}" class="btn btn-secondary">&#8592; instellingen</a>
+            <a href="{{ route('config') }}" class="btn btn-secondary">&#8592; terug naar instellingen</a>
             @include("common.messages")
             @include("common.errors")
             <div class="row">

@@ -7,7 +7,7 @@
         <div class="row">
             {{--TEMPORARY--}}
             <div class="col-sm-12">
-                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; dashboard</a>
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; terug naar dashboard</a>
                 @if(Auth::check())
                     {!! Form::open(array('route' => 'create_excel')) !!}
                         {{ Form::submit('Download Excel', array('class' => 'btn btn-primary pull-right')) }}

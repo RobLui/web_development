@@ -8,7 +8,7 @@
             {{--{{$competition->id}}--}}
             <a href="{{ route('show_competition') }}" class="btn btn-secondary">&#8592; terug</a>
             <div class="row">
-                <div class="col-sm-4 col-sm-offset-4">
+                <div class="col-sm-4 col-sm-offset-4 text-left">
                     <h2 class="text-center" >Wedstrijd aanpassen</h2>
                     {!! Form::open(array('route' => 'edit_competition','class' => 'form-horizontal')) !!}
                         {{ csrf_field() }}
@@ -17,13 +17,17 @@
                             <input type="text" class="form-control" name="explanation" id="explanation" value="{{$competition->explanation}}">
                         </div>
                         <div class="form-group">
-                            {{ Form::label('Prijzen'), "prizes" }}
+                            {{ Form::label('Uitleg prijs'), "prizes" }}
                             <input type="text" class="form-control" name="prizes" id="prizes" value="{{$competition->prizes}}">
                         </div>
+
+                        {{--DEZE MOET ER UIT--}}
+                        {{----}}
                         <div class="form-group">
                             {{ Form::label('Vorige deelnemers'), "previous_participants" }}
                             <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->previous_participants}}">
                         </div>
+
                         <div class="form-group">
                             {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                         </div>

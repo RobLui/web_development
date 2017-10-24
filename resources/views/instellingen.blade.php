@@ -5,7 +5,7 @@
         @include("common.messages")
         @include("common.errors")
             <div class="col-sm-12">
-                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; dashboard</a>
+                <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; terug naar dashboard</a>
             </div>
             <div class="col-sm-6">
                 <h2>Excel ontvangers</h2>

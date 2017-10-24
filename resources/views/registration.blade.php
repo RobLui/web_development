@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('show_competition') }}" class="btn btn-secondary">< vorige</a>
+        <a href="{{ route('show_competition') }}" class="btn btn-secondary">&#8592; terug naar uitleg</a>
         @include("common.messages")
         @include("common.errors")
         <div class="row">

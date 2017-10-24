@@ -166,13 +166,17 @@ label,option, .control-label {
 }
 
 .col-sm-6 {
-    background: white;
     border-radius: 5px;
     height: 100%;
 }
 
 .block {
-
+    height:20em;
+    width:50%;
+    margin: 0 auto;
+    margin-top:5em;
+    display:block;
+    background:blue !important;
 }
 
 /* MEDIA QUERIES */

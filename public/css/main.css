@@ -176,7 +176,6 @@ label,option, .control-label {
     margin: 0 auto;
     margin-top:5em;
     display:block;
-    background:blue !important;
 }
 
 /* MEDIA QUERIES */

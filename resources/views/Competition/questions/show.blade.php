@@ -35,24 +35,24 @@
                         {!! Form::open(array('route' => 'create_questions')) !!}
                             {{ csrf_field() }}
                             <div class="col-sm-4 form-group">
-                                {{ Form::label('category'),array('class' =>  'form-group' )}}
-                                {{ Form::input('category', 'category', null, ['class' => 'form-control']) }}
+                                {{ Form::label('Categorie'),array('class' =>  'form-group' )}}
+                                {{ Form::input('Categorie', 'category', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="col-sm-4 form-group">
-                                {{ Form::label('title'),array('class' =>  'form-group' )}}
-                                {{ Form::input('title', 'title', null, ['class' => 'form-control']) }}
+                                {{ Form::label('Titel'),array('class' =>  'form-group' )}}
+                                {{ Form::input('Titel', 'title', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="col-sm-4 form-group">
-                                {{ Form::label('text'),array('class' =>  'form-group' )}}
-                                {{ Form::input('text', 'text', null, ['class' => 'form-control']) }}
+                                {{ Form::label('Tekst'),array('class' =>  'form-group' )}}
+                                {{ Form::input('Tekst', 'text', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="col-sm-4 form-group">
-                                {{ Form::label('difficulty'),array('class' =>  'form-group' )}}
-                                {{ Form::input('difficulty', 'difficulty', null, ['class' => 'form-control']) }}
+                                {{ Form::label('Moeilijkheid'),array('class' =>  'form-group' )}}
+                                {{ Form::input('Moeilijkheid', 'difficulty', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="col-sm-4 form-group">
-                                {{ Form::label('answerd'),array('class' =>  'form-group' )}}
-                                {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control']) }}
+                                {{ Form::label('Antwoord'),array('class' =>  'form-group' )}}
+                                {{ Form::input('Antwoord', 'answerd', null, ['class' => 'form-control']) }}
                             </div>
                             <div class="col-sm-10 form-group">
                                 {{ Form::label('active'),array('class' =>  'form-group' )}}

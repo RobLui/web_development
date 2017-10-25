@@ -3,7 +3,7 @@
 @section('content')
     @if($question)
         <div class="container">
-            <a href="{{ url()->previous() }}" class="btn btn-secondary">&#8592; terug</a>
+            <a href="{{ route('show_questions') }}" class="btn btn-secondary">&#8592; terug naar vraag</a>
             @include("common.messages")
             @include("common.errors")
             <div class="row">
@@ -32,7 +32,7 @@
                             <input type="text" class="form-control" name="answerd" id="answerd" value="{{$question->answerd}}">
                         </div>
                         <div class="form-group">
-                            {{ Form::label('active'), "active" }}
+                            {{ Form::label('Actief'), "active" }}
                             <input type="checkbox" class="form-control" name="active" id="active" value="{{$question->active}}">
                         </div>
                         <div class="form-group">

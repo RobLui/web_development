@@ -1,7 +1,7 @@
 <?php
 
 
-Auth::routes();
+
 
 // --------WELCOME------------
 // ---------------------------
@@ -15,6 +15,8 @@ Auth::routes();
         ->name('dashboard')
         ->middleware('auth')
     ;
+
+Auth::routes();
 
 // --------COMPETITION--------
 // ---------------------------

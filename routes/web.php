@@ -16,7 +16,17 @@
         ->middleware('auth')
     ;
 
-Auth::routes();
+// --------NORMAL AUTH--------
+// ---------------------------
+    Auth::routes();
+
+// --------OAUTH--------------
+// ---------------------------
+    Route::get('auth/{driver}/callback', 'Auth\SocialController@handleProviderCallback');
+    ;
+    Route::get('auth/{driver}', 'Auth\SocialController@redirectToProvider')
+    ;
+
 
 // --------COMPETITION--------
 // ---------------------------

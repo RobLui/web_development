@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\EmailManager;
 use App\Participant;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
-use const null;
 use function redirect;
 use function view;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ParticipantController extends Controller
 {
@@ -58,11 +57,18 @@ class ParticipantController extends Controller
                 $participant->competition_id = $comp_id;
                 $participant->answerd = $req->answerd;
                 $participant->save();
-                Session::flash("success", "Opgeslagen");
+                Session::flash("success", "Bedankt voor het meedoen, veel succes!");
             }
         }
         else {
-            Session::flash("error", "Helaas, het lijkt erop dat je al eens mee hebt gedaan deze periode!");
+            if ($u_email)
+            {
+                Session::flash("error", "Dit e-mailadres werd reeds geregistreerd");
+            }
+            if ($u_participant)
+            {
+                Session::flash("error", "Dit ip-adres werd reeds geregistreerd");
+            }
         }
         return redirect()->back();
     }
@@ -96,7 +102,7 @@ class ParticipantController extends Controller
                 $participant->postalcode = $req->postalcode;
                 $participant->email = $req->email;
                 $participant->answerd = $req->answerd;
-                $participant->ipadress = $req->ip();
+                $participant->ipadress = $req->ipadress;
                 $participant->competition_id = $comp_id;
                 $participant->has_permission = (boolean)$req->has_permission;
                 $participant->save();
@@ -149,10 +155,10 @@ class ParticipantController extends Controller
 
             foreach ($emailmanagers as $m)
             {
-                $message->to($m->email)->subject('Participants list');
+                $message->to($m->email)->subject('Deelnemerslijst');
             }
             });
-            Session::flash("success", ("Mail naar managers verstuurd!"));
+            Session::flash("success", ("Deelnemerslijst naar e-mailmanagers verstuurd!"));
             return redirect()->back();
     }
 

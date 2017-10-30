@@ -17,6 +17,7 @@ class Participant extends Model
         'postalcode',
         'email',
         'has_permission',
-        'answerd'
+        'answerd',
+        'ipadress'
     ];
 }

@@ -8,7 +8,7 @@
             <div class="row">
             <div class="col-sm-12">
                 <div class="content">
-                    <h2 class="push">Deelnemersformulier</h2>
+                    <h2 class="push">Deelnemer aanpassen</h2>
                         {!! Form::open(array(route('edit_participants',$participant->id) ,'class' => 'form-horizontal')) !!}
                         <div class="col-sm-6">
                             <div class="col-sm-5 col-sm-offset-1 pull-right">
@@ -52,6 +52,10 @@
                                 <div class="form-group">
                                     {{ Form::label('answerd', 'Antwoord', array('class' => 'control-label pull-left' )) }}
                                     <input type="text" class="form-control" name="answerd" value="{{$participant->answerd}}">
+                                </div>
+                                <div class="hidden">
+                                    {{ Form::label('ipadress', 'ipadress', array('class' => '' )) }}
+                                    <input type="text" class="hidden" name="ipadress" value="{{$participant->ipadress}}">
                                 </div>
                             </div>
                         </div>

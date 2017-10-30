@@ -110,10 +110,6 @@
         ->name('config')
         ->middleware('auth');
     ;
-//    Route::get('/instellingen/emailmanager/show', 'ConfigController@show')
-//        ->name('show_email_manager')
-//        ->middleware('auth')
-//    ;
     Route::get('/instellingen/emailmanager/create', 'ConfigController@create')
         ->name('create_email_manager')
         ->middleware('auth')
@@ -134,10 +130,6 @@
         ->name('delete_email_manager')
         ->middleware('auth')
     ;
-//    Route::get('/instellingen/emailmanager/edit', 'ConfigController@edit')
-//        ->name('edit_email_manager')
-//        ->middleware('auth')
-//    ;
 
 // -----------PERIODES---------
 // ----------------------------
@@ -170,6 +162,6 @@
 
 // --------PERMISSION-----------
 // -------------------------
-    Route::post('/checkpermission', 'QuestionController@permission')
+    Route::get('/checkpermission', 'QuestionController@permission')
         ->name('permission')
     ;

@@ -11,18 +11,22 @@
                 <div class="block">
                     <div class="col-sm-12">
                         <div class="content ">
+
+                            {{-- Uitleg --}}
                             <div class="col-sm-6 col-sm-offset-3">
                                 <h2>Uitleg</h2>
                                 <p>{{ $competition->explanation }}</p>
                             </div>
 
-                            {{--Vorige deelnemers--}}
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <h2>Vorige winnaars</h2>
-                                @foreach($winners as $winner)
-                                    <p>{{ $winner->winner_name }}</p>
-                                @endforeach
-                            </div>
+                            {{-- Vorige deelnemers --}}
+                            @if(count($winners) > 0)
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <h2>Vorige winnaars</h2>
+                                    @foreach($winners as $winner)
+                                        <p>{{ $winner->winner_name }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
 
                     </div>

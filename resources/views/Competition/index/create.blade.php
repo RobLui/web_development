@@ -14,7 +14,7 @@
                         {{ Form::text('explanation', '', array('class' => 'form-control field col-sm-12')) }}
                     </div>
                     <div class="form-group col-sm-7">
-                        {{ Form::label('prizes', 'Prijzen', array('class' => 'form-group col-sm-12')) }}
+                        {{ Form::label('prizes', 'Uitleg prijs', array('class' => 'form-group col-sm-12')) }}
                         {{ Form::text("prizes",'',array('class' => 'form-control col-sm-12')) }}
                     </div>
                     <div class="form-group col-sm-7">

@@ -49,18 +49,25 @@ class ConfigController extends Controller
         $mm = EmailManager::find($id);
         $comps = Competition::all();
 
-        if ($req->isMethod("POST"))
-        {
-            $mm = EmailManager::findOrFail($id);
-            if ($mm)
-            {
-                $mm->name = $req->name;
-                $mm->email = $req->email;
-                $mm->competition_id = $req->competition_id;
-                $mm->save();
-                Session::flash('success','Manager updated');
-            }
-            return redirect()->back();
+        if ($req->isMethod("POST")) {
+
+            $validator = $this->validate($req, [
+                'name'      => 'required|max:255',
+                'email'    => 'required|max:255|email',
+                'competition_id'    => 'required|integer'
+            ]);
+
+            if($validator) {
+                    $mm = EmailManager::findOrFail($id);
+                    if ($mm) {
+                        $mm->name = $req->name;
+                        $mm->email = $req->email;
+                        $mm->competition_id = $req->competition_id;
+                        $mm->save();
+                        Session::flash('success', 'Manager updated');
+                    }
+                    return redirect()->back();
+                }
         }
 
         return view("mailmanagers.edit")
@@ -75,7 +82,7 @@ class ConfigController extends Controller
         {
             $mailmanager = EmailManager::findOrFail($id);
             $mailmanager->delete($id);
-            Session::flash("success", "Deelnemer verwijderd");
+            Session::flash("success", "Manager verwijderd");
         }
         return $this->index();
     }

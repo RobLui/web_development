@@ -20,14 +20,6 @@
                             {{ Form::label('Uitleg prijs'), "prizes" }}
                             <input type="text" class="form-control" name="prizes" id="prizes" value="{{$competition->prizes}}">
                         </div>
-
-                        {{--DEZE MOET ER UIT--}}
-                        {{----}}
-                        <div class="form-group">
-                            {{ Form::label('Vorige deelnemers'), "previous_participants" }}
-                            <input type="text" class="form-control" name="previous_participants" id="previous_participants" value="{{$competition->previous_participants}}">
-                        </div>
-
                         <div class="form-group">
                             {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                         </div>

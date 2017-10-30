@@ -17,10 +17,7 @@ class CreateCompetitionTable extends Migration
             $table->increments('id');
             $table->string('explanation');
             $table->string('prizes');
-            $table->string('previous_participants');
             $table->timestamps();
-
-
         });
     }
 

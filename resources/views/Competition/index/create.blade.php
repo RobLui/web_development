@@ -18,10 +18,6 @@
                         {{ Form::text("prizes",'',array('class' => 'form-control col-sm-12')) }}
                     </div>
                     <div class="form-group col-sm-7">
-                        {{ Form::label('previous_participants', 'Vorige deelnemers', array('class' => 'form-group col-sm-12')) }}
-                        {{ Form::text("previous_participants",'',array('class' => 'form-control col-sm-12')) }}
-                    </div>
-                    <div class="form-group col-sm-7">
                         {{ Form::submit('Toevoegen', array('class' => 'btn btn-primary btn-sm')) }}
                     </div>
                 {!! Form::close() !!}

@@ -30,14 +30,12 @@ class CompetitionController extends Controller
             $validator = $this->validate($req, [
                 'explanation'               => 'required|max:450|string',
                 'prizes'                    => 'required|max:255',
-                'previous_participants'     => 'required|max:255'
             ]);
             if ($validator)
             {
                 $comp = new Competition();
                 $comp->explanation = $req->explanation;
                 $comp->prizes = $req->prizes;
-                $comp->previous_participants = $req->previous_participants;
                 $comp->save();
                 Session::flash('success','Wedstrijd toegevoegd');
             }
@@ -49,6 +47,9 @@ class CompetitionController extends Controller
 
     public function edit(Request $req){
 
+        if (Period::all()) {
+            $winners = Period::whereNotNull('winner')->get();
+        }
         $comp = Competition::find(1);
         $view = view('Competition.index.edit');
         if (!$comp)
@@ -60,18 +61,19 @@ class CompetitionController extends Controller
             $validator = $this->validate($req, [
                 'explanation'               => 'required|max:450|string',
                 'prizes'                    => 'required|max:255',
-                'previous_participants'     => 'required|max:255'
             ]);
             if($validator){
                 $comp->explanation = $req->explanation;
                 $comp->prizes = $req->prizes;
-                $comp->previous_participants = $req->previous_participants;
                 $comp->save();
             }
 
             $view = view('Competition.index.show');
         }
-        return $view->withCompetition($comp);
+        return $view
+            ->withCompetition($comp)
+            ->withWinners($winners)
+            ;
     }
 
 

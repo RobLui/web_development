@@ -162,3 +162,6 @@ label,option, .control-label {
 .panel-heading, .panel-body{
     background-color:beige;
 }
+.hidden {
+    display:none;
+}

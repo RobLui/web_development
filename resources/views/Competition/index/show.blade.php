@@ -2,7 +2,8 @@
 
 @section('content')
     @if($competition)
-        <div class="container">
+    <div class="container">
+        <div class="col-sm-12">
             <a href="{{ route('welcome') }}" class="btn btn-secondary">&#8592; terug naar home</a>
             @include("common.messages")
             @include("common.errors")
@@ -10,7 +11,7 @@
 
                 <div class="block">
                     <div class="col-sm-12">
-                        <div class="content ">
+                        <div class="content">
 
                             {{-- Uitleg --}}
                             <div class="col-sm-6 col-sm-offset-3">
@@ -54,5 +55,6 @@
                 @endif
             @endif
         </div>
+    </div>
 @endsection
 

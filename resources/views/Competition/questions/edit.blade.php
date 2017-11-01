@@ -2,7 +2,8 @@
 
 @section('content')
     @if($question)
-        <div class="container">
+    <div class="container">
+        <div class="col-sm-12">
             <a href="{{ route('show_questions') }}" class="btn btn-secondary">&#8592; terug naar vraag</a>
             @include("common.messages")
             @include("common.errors")
@@ -36,11 +37,12 @@
                             <input type="checkbox" class="form-control" name="active" id="active" value="{{$question->active}}">
                         </div>
                         <div class="form-group">
-                            {{ Form::submit('submit', array('class' => 'btn btn-secondary')) }}
+                            {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                         </div>
                     {!! Form::close() !!}
                 </div>
             </div>
         </div>
+    </div>
     @endif
 @endsection

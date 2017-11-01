@@ -47,7 +47,6 @@
                                     {{ Form::input('municipality', 'municipality', null, ['class' => 'form-control']) }}
                                 </div>
                             </div>
-                        </div>
                         <div class="col-sm-4 col-sm-offset-4">
                             @if(count($questions) > 0 )
                                 <div class="form-group">
@@ -55,7 +54,7 @@
                                     {{ Form::input('answerd', 'answerd', null, ['class' => 'form-control text-center']) }}
                                 </div>
                             @endif
-
+                        </div>
                         </div>
                     <div class="col-sm-12">
                         <div class="form-group">

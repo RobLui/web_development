@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Competition;
 use App\EmailManager;
 use App\Participant;
+use App\Period;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -140,14 +141,6 @@ class ParticipantController extends Controller
 
     public function SendMail() {
 
-//        $emails['attach'] = base_path().'/storage/test/test.xls';
-
-//        Mail::send('email.remindsupplier', $testData, function ($mail) use ($emails) {
-//            $mail->to($emails['to'])
-//                ->subject('Test Application')
-//                ->attach($emails['attach']);
-//        });
-//
         $participants = Participant::all();
         Mail::send('participants.participants', ['parts' => $participants] , function ($message){
 
@@ -170,9 +163,24 @@ class ParticipantController extends Controller
 
             foreach ($emailmanagers as $m)
             {
-                $message->to($m->email)->subject('Participants list');
+                $message->to($m->email)->subject('Deelnemerslijst');
             }
         });
         return;
     }
+
+    public function SendWinningMail() {
+
+        Mail::send('mail.winningmail', [], function ($message) {
+
+            $winning_participant = Period::whereNotNull('winner_email')
+                ->take(1)
+                ->get()
+                ->first()
+            ;
+            $message->to($winning_participant->winner_email)->subject('Proficiat u heeft gewonnen!');
+        });
+        return;
+    }
+
 }

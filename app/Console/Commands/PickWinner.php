@@ -64,6 +64,9 @@ class PickWinner extends Command
         $period->save();
 
         $this->info($period);
+
+        return app('App\Http\Controllers\ParticipantController')->SendWinningMail();
+
     }
 
 }

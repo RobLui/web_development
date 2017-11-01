@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
     @include("common.messages")
     @include("common.errors")

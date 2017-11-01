@@ -4,23 +4,23 @@
 <div class="container">
     @include("common.messages")
     @include("common.errors")
-        <div class="col-sm-12">
+        <div class="col-sm-12 push">
             <a href="{{ route('dashboard') }}" class="btn btn-secondary">&#8592; terug naar dashboard</a>
         </div>
 
     {{--TOGGLERS--}}
     <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <a href="#" class="btn btn-primary manager-toggler col-sm-6 col-sm-offset-3 push">
-                        &#8593; toon managers &#8595;
-                    </a>
-                </div>
-                <div class="col-sm-6">
-                    <a href="#" class="btn btn-primary period-toggler col-sm-6 col-sm-offset-3 push">
-                        &#8593; toon periodes &#8595;
-                    </a>
-                </div>
-            </div>
+        <div class="col-sm-6">
+            <a href="#" class="btn btn-primary manager-toggler col-sm-6 col-sm-offset-3 push">
+                &#8593; toon ontvangers &#8595;
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="#" class="btn btn-primary period-toggler col-sm-6 col-sm-offset-3 push">
+                &#8593; toon periodes &#8595;
+            </a>
+        </div>
+    </div>
     {{--END TOGGLERS--}}
 
     {{--START PERIODES--}}
@@ -49,7 +49,7 @@
                                 Email winnaar: {{  $p->winner_email}}
                             </li>
                             <li class="list-group-item">
-                                <a class="btn btn-primary" href="{{ route('edit_period', $p->id) }}">edit</a>
+                                <a class="btn btn-primary" href="{{ route('edit_period', $p->id) }}">aanpassen</a>
                             </li>
                         </div>
                     </ul>

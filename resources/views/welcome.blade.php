@@ -10,9 +10,7 @@
                 <div class="title m-b-sm">
                     <img class="img-responsive" src="{{URL::asset('/images/iphone_red.png')}}" alt="Apple">
                 </div>
-                <div class="links">
                     <a href="{{ route('show_competition') }}" class="btn btn-primary">Ik wil meedoen!</a>
-                </div>
             </div>
         </div>
     </div>

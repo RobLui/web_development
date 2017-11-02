@@ -33,7 +33,7 @@ class QuestionController extends Controller
                 $question->text = $req->text;
                 $question->difficulty = $req->difficulty;
                 $question->answerd = $req->answerd;
-                $question->active = $req->active;
+                $question->active = true;
                 $question->save();
                 Session::flash('success',($question->title .' aangemaakt'));
             }
@@ -59,7 +59,7 @@ class QuestionController extends Controller
                 $question->text = $req->text;
                 $question->difficulty = $req->difficulty;
                 $question->answerd = $req->answerd;
-                $question->active = $req->active;
+                $question->active = true;
                 $question->save();
                 Session::flash('success',($question->title .' aangepast'));
             }

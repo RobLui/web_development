@@ -66,8 +66,8 @@ class CompetitionController extends Controller
                 $comp->explanation = $req->explanation;
                 $comp->prizes = $req->prizes;
                 $comp->save();
+                Session::flash('success',('Competitie aangepast'));
             }
-
             $view = view('Competition.index.show');
         }
         return $view

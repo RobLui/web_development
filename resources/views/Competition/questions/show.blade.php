@@ -54,10 +54,6 @@
                                 {{ Form::label('Antwoord'),array('class' =>  'form-group' )}}
                                 {{ Form::input('Antwoord', 'answerd', null, ['class' => 'form-control']) }}
                             </div>
-                            <div class="col-sm-10 form-group">
-                                {{ Form::label('active'),array('class' =>  'form-group' )}}
-                                {{ Form::checkbox("active"),array('class' => 'form-group') }}
-                            </div>
                             <div class="col-sm-10">
                                 {{ Form::submit('Toevoegen', array('class' => 'btn btn-primary')) }}
                             </div>

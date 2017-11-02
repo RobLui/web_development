@@ -33,10 +33,6 @@
                             <input type="text" class="form-control" name="answerd" id="answerd" value="{{$question->answerd}}">
                         </div>
                         <div class="form-group">
-                            {{ Form::label('Actief'), "active" }}
-                            <input type="checkbox" class="form-control" name="active" id="active" value="{{$question->active}}">
-                        </div>
-                        <div class="form-group">
                             {{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
                         </div>
                     {!! Form::close() !!}

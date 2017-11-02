@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'App\Console\Commands\PickWinner'
+        'App\Console\Commands\PickWinner',
+        'App\Console\Commands\SendParticipantlist'
     ];
 
     /**
@@ -25,10 +26,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('pick:winner')
-                    ->weeklyOn(6,'22:00');
+                    ->weeklyOn(6,'23:00');
 
          $schedule->command('send:participantlist')
-                    ->dailyAt('22:00');
+                    ->dailyAt('23:00');
     }
 
     /**
